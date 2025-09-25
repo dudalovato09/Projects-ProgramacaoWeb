@@ -1,0 +1,100 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			
+			
+			
+			function avaliaSenha()
+			{
+				var contComplexidadeSenha=0;
+				var campoSenha = document.getElementById("senha");
+				
+				if (PossuiOitoDigitos(campoSenha.value))
+					contComplexidadeSenha++;
+
+			
+				
+				if (PossuiCaracterMaiusculo(campoSenha.value))
+					contComplexidadeSenha++;
+
+				
+				if (PossuiCaracterMinusculo(campoSenha.value))
+					contComplexidadeSenha++;
+
+				
+				if (PossuiNumero(campoSenha.value))
+					contComplexidadeSenha++;
+
+				
+				if (PossuiCaracterEspecial(campoSenha.value))
+					contComplexidadeSenha++;
+
+				
+				if (PossuiEspacoEmBranco(campoSenha.value))
+					contComplexidadeSenha++;
+				
+				SetarCorComplexidadeSenha(contComplexidadeSenha);
+			}
+			
+			function PossuiCaracterMaiusculo(text)
+			{
+				return ((text.match(/[ABCDEFGHIJKLMNOPQRSTUVXZ]/)) != null);
+			}
+			
+			function PossuiCaracterMinusculo(text)
+			{
+				return ((text.match(/[abcdefghijklmnopqrstuvxz]/)) != null);
+			}
+			
+			function PossuiNumero(text)
+			{
+				return ((text.match(/[0123456789]/)) != null);
+			}
+			
+			function PossuiCaracterEspecial(text)
+			{
+				return ((text.match(/[@#$%&*]/)) != null);
+			}
+			
+			function PossuiEspacoEmBranco(text)
+			{
+				return ((text.match(/[ ]/)) != null);
+			}
+			
+			
+			function PossuiOitoDigitos(texto)
+			{
+				if (texto.length >= 8)
+					return true;
+				else
+					return false;
+					
+			}
+			
+			function SetarCorComplexidadeSenha(valor)
+			{
+				var objetoComplexidade = document.getElementById("complexidade");
+				
+				
+				if (valor <= 2) 
+				{
+					objetoComplexidade.style.backgroundColor = "red";
+				}
+				else if (valor > 2 && valor <= 4)
+				{
+					objetoComplexidade.style.backgroundColor = "yellow";
+				}
+				else 
+				{
+					objetoComplexidade.style.backgroundColor = "green";
+				}
+			}
+
+			
+		</script>
+	</head>
+	<body>
+		<input onkeyup="avaliaSenha()" type="text" id="senha" />
+		<div id="complexidade" style="position:relative;border:1px solid red;height:40px;width:80px;"></div>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exemplo de script de evento</title>
+        <script src="jquery-3.7.0.js"></script>
+        <script>
+            function ProcessarConsulta(){
+                var tabela="";
+
+                $.get("https://jsonplaceholder.typicode.com/posts", function(data, status){
+                    
+                    tabela = "<table>"
+                    $.each(data, function(i, item) {
+                        tabela += "<tr>" 
+                        tabela += "<td>" + item.id + "</td>"
+                        tabela += "<td>" + item.title + "</td>"
+                        tabela += "</tr>" 
+                    });
+                    tabela += "</table>"
+                    $("#div1").html(tabela);                        
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" value="Executar" onclick="ProcessarConsulta()">
+        <div id="div1">
+
+        </div>
+    </body>
+</html>

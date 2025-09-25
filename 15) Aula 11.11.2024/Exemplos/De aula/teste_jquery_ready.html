@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="jquery-3.7.0.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#teste").val(5);
+                $("#divefeito").hide();
+
+                $("#botao").dblclick(function(){
+                    $("#teste").val(10);
+                });
+
+                $("#efeito").click(function(){
+                    //funcao de callback
+                    $("#divefeito").fadeIn(30000,function(){
+                        alert("Terminado carregamento");
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <input type="text" id="teste">
+        <br>
+        <input type="button" id="botao">
+        <br>
+        <input type="button" id="efeito" value="Efeito Div">
+        <br>
+        <div id="divefeito" style="background-color: red;">
+            <p>Conteudo</p>
+        </div>
+    </body>
+</html>

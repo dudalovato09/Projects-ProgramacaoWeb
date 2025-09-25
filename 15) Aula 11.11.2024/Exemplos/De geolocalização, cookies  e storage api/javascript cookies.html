@@ -1,0 +1,41 @@
+<html>
+	<head>
+	<script language="javascript" type="text/javascript">
+	
+		function gravaContador()
+		{
+			var data = new Date;
+			data.setMonth(data.getMonth()+6);
+			
+			var numero = Number(recuperaContador());
+		
+			numero++;
+			
+			var obj = document.getElementById("cont");
+			obj.innerHTML = numero;
+			
+			document.cookie = "contador=" + numero + ";expires=" + data.toGMTString();
+
+		}
+		
+		function recuperaContador()
+		{
+			var contador = document.cookie.split("=")[1];
+			
+			if (contador == "")
+			{
+				contador = "0";
+			}
+			
+			return contador;
+		}
+			
+		</script>
+	</head>
+	<body onload="gravaContador()">
+		<p id="cont"></p>
+	</body>
+</html>
+
+
+

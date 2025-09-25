@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Atividade1</title>
+        <script src="script.js" ></script>
+        <script>
+            function GravarCookie(campo){
+                var dataValidade = new Date();
+
+                dataValidade.setMonth(dataValidade.getMonth()+6);
+
+                setCookie("contador", campo.value, dataValidade);
+
+            }
+
+            function LerCookie(campo){
+                campo.value = getCookie("contador");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Exemplo de Cookie</h1>
+        <label>Conteúdo do Cookie</label>
+        <input type="text" id="campo">
+        <input type="button" value="Gravar Cookie" onclick="GravarCookie(campo)">
+        <input type="button" value="Ler Cookie" onclick="LerCookie(campo)">
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Atividade1</title>
+        <script src="script.js" ></script>
+        <script>
+            function AtualizarContador(){
+                //Toda vez que a pagina for carregada: - ok
+                var contador;
+                
+                // Ler uma variavel contadora dos cookies
+                contador =  localStorage.getItem("contador1");
+                
+                // Incrementar esta variavel em 1
+                if (contador == ""){
+                    contador = 1;
+                }
+                else{
+                    contador = Number(contador);
+                    contador++;
+                }
+                // Exibir esta informacao na tela
+                document.getElementById("campo").value = contador;
+                // Atualizar o cookie com o novo valor
+                localStorage.setItem("contador1",contador);
+            }
+
+
+        </script>
+    </head>
+    <body onLoad="AtualizarContador()">
+        <h1>Exemplo de Local Storage</h1>
+        <label>Conteúdo da valiravel</label>
+        <input type="text" id="campo">
+    </body>
+</html>

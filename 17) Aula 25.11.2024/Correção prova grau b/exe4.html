@@ -1,0 +1,65 @@
+<html>
+ <!--
+ Criar um programa em JavaScript que permita a leitura de um determinado número de 
+ coordenadas X,Y que representam a propriedade “top” e “left” despectivamente 
+ de um conjunto de Divs. 
+ Podem ser lidas tantas coordenadas quantas o usuário quiser, 
+ e ao final (quando o usuário solicitar), o programada deve desenhar todas estas “divs” 
+ em tela posicionando as mesmas conforme a coordenada atribuída. 
+ Para esta questão deve-se utilizar matrizes e a cor de cada div desenhada deve ser vermelha. 
+ -->
+
+
+	<head>
+		<script>
+		    var matrizCoordenadas = new Array();
+			var contador = 0;
+		
+			function adicionar(){
+				matrizCoordenadas[contador] = new Array();
+				
+				matrizCoordenadas[contador][0] = document.getElementById("coorx").value;
+				matrizCoordenadas[contador][1] = document.getElementById("coory").value;
+				
+				contador++;
+			}
+			
+			function desenhar(){
+			    var obj = document.getElementById("divi");
+				var i;
+				var elemento;
+				
+				obj.innerHTML = "";
+				for (i = 0; i < contador; i++)
+				{
+					elemento = "<div style='width:100px;height:100px;position:absolute;top:" + matrizCoordenadas[i][0] + "px;left:" + matrizCoordenadas[i][1] + "px;background-color:red;'></div>" ;
+					obj.innerHTML = obj.innerHTML + elemento;
+				} 
+			}
+			
+		</script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>
+					X
+				</td>
+				<td>
+					<input type="text" id="coorx">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Y
+				</td>
+				<td>
+					<input type="text" id="coory">
+				</td>
+			</tr>
+		</table>
+		<input type="button" onclick="adicionar()" value="Adicionar">
+		<input type="button" onclick="desenhar()" value="Desenhar">
+		<div id="divi" style="position:absolute;width:1000px;height:1000px;">
+	</body>
+</html>

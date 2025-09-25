@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<script type="text/javascript" language="javascript">
+			
+			function inicializa()
+			{
+			    //obtem a variavel
+				var objeto = document.getElementById("quadrado");
+				
+				objeto.style.position = "absolute";
+				objeto.style.width = "100px";
+				objeto.style.height = "100px";
+				objeto.style.top = "200px";
+				objeto.style.left = "10px";
+				
+				
+				//atribui a funcao movimento para o evento de mousemove do document (documento html)
+				document.onmousemove = movimenta;
+				}
+			
+			function movimenta(e)
+			{
+				var objeto = document.getElementById("quadrado");
+				
+				objeto.style.top = e.pageY;
+				objeto.style.left = e.pageX;
+				
+				document.getElementById("para").innerHTML ="X=" + e.pageX + ",Y=" + e.pageY;
+				
+			}
+			
+		</script>
+	</head>
+	<body onload="inicializa()">
+		<p id="para"></p>
+		
+		
+		<div id="quadrado">
+			<img src="xix.png" />
+		</div>
+		
+	</body>
+</html>

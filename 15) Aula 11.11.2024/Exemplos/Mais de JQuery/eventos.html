@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<script type="text/javascript" src="jquery-3.2.1.js"></script>
+	
+		<script type="text/javascript">
+			var teste = function(){
+				$("#elemento").val(55);
+			}
+			
+			$(document).ready( function(){
+				
+				$("#btn").click(teste);
+				
+			});
+		
+		</script>
+	
+	</head>
+	<body>
+		<input type="text" id="elemento">
+		<input type="button" id="btn" value="me clique!">
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<script>
+			function processar(){
+				var obj = document.getElementById("divi");
+			
+			    divi.style.height = document.getElementById("altura").value;
+				divi.style.width = document.getElementById("largura").value;
+				divi.style.top = document.getElementById("posicaosuperior").value;
+				divi.style.left = document.getElementById("posicaoesquerda").value;
+				divi.style.backgroundColor = document.getElementById("cor").value;
+				divi.innerHTML = document.getElementById("mensagem").value;
+			}
+		</script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>
+					Altura
+				</td>
+				<td>
+					<input type="text" id="altura">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Largura
+				</td>
+				<td>
+					<input type="text" id="largura">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Posicao Superior
+				</td>
+				<td>
+					<input type="text" id="posicaosuperior">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Posicao Esquerda
+				</td>
+				<td>
+					<input type="text" id="posicaoesquerda">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Cor
+				</td>
+				<td>
+					<input type="text" id="cor">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Mensagem
+				</td>
+				<td>
+					<input type="text" id="mensagem">
+				</td>
+			</tr>
+		</table>
+		<input type="button" onclick="processar()" value="Processar">
+		<div id="divi" style="position:absolute;">
+	</body>
+</html>

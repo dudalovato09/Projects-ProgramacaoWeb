@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="jquery-2.1.1.js"></script>
+		<script>
+			function executa()
+			{
+				//var obj = document.getElementById("nome");
+				//obj.value = "juliano";
+				$( '#nome' ).val( "juliano" );
+			}
+			
+			function carrega()
+			{
+				$("#bot").dblclick(function ()
+				{
+					alert("oi");
+				})
+			}
+		</script>
+	</head>
+	<body onload="carrega()">
+		<input type="text" id="nome"></input>
+		<input type="button" id="bot" value="me clique" onclick="executa()"></input>
+	</body>
+</html>

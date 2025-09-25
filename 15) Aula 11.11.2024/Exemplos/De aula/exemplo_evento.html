@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exemplo de script de evento</title>
+        <script>
+            function ProcessarPrograma(){
+                var obj;
+                obj = document.getElementById("nome");
+                obj.value = "Ola mundo";
+            }
+        </script>
+    </head>
+    <body onload="ProcessarPrograma()">
+        <label>Valor</label>
+        <br>
+        <input type="text" id="nome" value="teste">
+    </body>
+</html>

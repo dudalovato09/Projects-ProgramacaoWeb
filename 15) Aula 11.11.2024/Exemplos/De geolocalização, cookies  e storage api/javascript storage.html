@@ -1,0 +1,28 @@
+<html>
+	<head>
+	<script language="javascript" type="text/javascript">
+	
+		function AtualizaContador()
+		{
+			var numContador = localStorage.getItem('contador');
+			
+			numContador = Number(numContador);
+			
+			numContador++;
+			
+			var obj = document.getElementById("cont");
+			obj.innerHTML = numContador;
+			
+			localStorage.setItem('contador',numContador);
+
+		}
+			
+		</script>
+	</head>
+	<body onload="AtualizaContador()">
+		<p id="cont"></p>
+	</body>
+</html>
+
+
+

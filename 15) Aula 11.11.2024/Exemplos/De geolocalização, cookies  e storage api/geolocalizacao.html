@@ -1,0 +1,20 @@
+<html>
+	<head>
+
+	</head>
+	<body>
+		<script type="text/javascript">
+			navigator.geolocation.getCurrentPosition(mostraposicao);
+			
+			function mostraposicao(position)
+			{
+				lat = position.coords.latitude;
+				lon = position.coords.longitude;
+				
+				window.location = "https://www.google.com.br/maps?q=" + lat + "," + lon;
+
+			}
+		
+		</script>
+	</body>
+</html>

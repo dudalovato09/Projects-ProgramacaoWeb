@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Teste Modernizr</title>
+        <script src="modernizr-custom.js"></script>
+        <script>
+            function VerificaVideo(){
+                var obj = document.getElementById("teste");
+
+                if (Modernizr.video) {
+                    // supported
+                    obj.innerHTML = "A Tag Video é suportada";
+                } else {
+                    // not-supported
+                    obj.innerHTML = "A Tag Video não é suportada";
+                }
+            }
+        </script>
+    </head>
+    <body onload="VerificaVideo()">
+        <p id="teste"></p>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Atividade 2</title>
+        <script>
+            var vetor = new Array();
+            var contador = 0;
+
+            function AdicionaElemento(){
+                var vlr = document.getElementById("valor").value;
+                vlr = Number(vlr);
+
+                vetor[contador] = vlr;
+                contador++;
+            }
+
+            function OrdenarVetor(){
+                for(j = 0;j < contador; j++){
+                    for(p = 0; p < contador; p++){
+                        if ( Number(vetor[j]) < Number(vetor[p])){
+                            temporaria = vetor[j];
+                            vetor[j] = vetor[p];
+                            vetor[p] = temporaria;
+                        }
+                    }
+                }
+
+                document.getElementById("resultado").innerHTML = vetor;
+            }
+
+            function Inicializa(){
+                setInterval(OrdenarVetor, 60000);
+            }
+
+        </script>
+    </head>
+    <body onload="Inicializa()">
+        <h1>Atividade 2</h1>
+        Valor: <input type="text" id="valor">
+        <input type="button" value="Adicionar Valor" onclick="AdicionaElemento()">
+        <div id="resultado">
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,232 @@
+<html>
+	<head>
+		<script language="javascript" type="text/javascript">
+			//incializa um vetor de 3 posicoes
+			var matJogoVelha = new Array(3)
+			//para cada posicao do vetor, cria um novo vetor de 3 posicoes, para criar um matriz 3x3
+			matJogoVelha[0] = [0,0,0]
+			matJogoVelha[1] = [0,0,0]
+			matJogoVelha[2] = [0,0,0]
+			
+			/*Variavel que controla o jogador atual
+			* false = jogador 1
+			* true = jogador 2
+			*/
+			var jogador = false
+			
+			/*Variavel que avalia se o jogo esta concluido*/
+			var jogoVencido = false
+			
+			/*Mensagem para o Jogador que venceu*/
+			var jogoMensagem = "" 
+			
+			/*Este metodo inicia o jogo*/
+			function reinicio()
+			{
+				for(i =0; i < 3 ; i++)
+				{
+					for(j = 0; j < 3; j++)
+					{
+						matJogoVelha[i][j] = 0;
+					}
+				}
+				jogador = false
+				jogoVencido = false
+				jogoMensagem = ""
+				atualizaTela()
+			}
+			
+			/*Este metodo atualiza a tela a partir da matriz
+			* para utilizar este metodo deve-se conhecer o nome dos ID de cada celula da tabela html
+			*/
+			function atualizaTela()
+			{
+				var ids=1
+				
+				for(i =0; i < 3 ; i++)
+				{
+					for(j = 0; j < 3; j++)
+					{
+						//este metodo do document obtem o objeto html atraves do seu id, permitindo alterar atributos do mesmo
+						//neste caso, altera a imagem de cada celula conforme o jogador
+						celula = document.getElementById(ids)
+
+						if (matJogoVelha[i][j] == 0)
+						{
+							celula.innerHTML =  "&nbsp" 
+						}
+						else if (matJogoVelha[i][j] == 1)
+						{
+						    celula.innerHTML = "<img src='bola.png'>"
+						}
+						else if (matJogoVelha[i][j] == 2)
+						{
+						    celula.innerHTML = "<img src='xix.png'>"
+						}
+						
+						ids++
+						
+					}
+				}
+				//atualiza a informacao do jogador atual na tela
+				player = document.getElementById("player")
+				if (!jogador)
+				{
+					player.innerHTML = "Jogador Atual: <b>Jogador 1</b>" 
+				}
+				else
+				{
+					player.innerHTML = "Jogador Atual: <b>Jogador 2</b>" 
+				}
+				
+				//se a partida terminar, indica o gahador
+				ganhador = document.getElementById("vitoria")
+				ganhador.innerHTML = jogoMensagem
+			}
+			
+			function movimenta(x,y)
+			{
+				//somente joga se o jogo ainda nao esta terminado
+				if (!jogoVencido)
+				{
+					//verifica se pode fazer a jogada na peca citada
+					if (matJogoVelha[x][y] == 0)
+					{
+						if (!jogador)
+						{
+							matJogoVelha[x][y] = 1
+						}
+						else
+						{
+							matJogoVelha[x][y] = 2
+						}
+						//inverte o jogador somente se a jogada pode ser realizada
+						jogador = !jogador
+					}
+										
+					//avalia se o jogo esta concluido
+					avaliaVitoria()
+					
+					//apos realizar a jogada, atualiza a tela
+					atualizaTela()
+				}
+			}
+			
+			function avaliaVitoria()
+			{
+				//Se o jogo ainda nao esta concluido, avalia se alguem venceu
+				if (!jogoVencido)
+				{
+					//verifica se alguma linha tem uma jogada
+					for(i =0; i < 3 ; i++)
+					{
+						if (matJogoVelha[i][0] == 1 &&
+						    matJogoVelha[i][1] == 1 &&
+							matJogoVelha[i][2] == 1)
+						{
+							jogoMensagem = "Jogador 1 Venceu"
+							jogoVencido = true;
+							return;
+						}
+						else if(matJogoVelha[i][0] == 2 &&
+								matJogoVelha[i][1] == 2 &&
+								matJogoVelha[i][2] == 2)
+						{
+							jogoMensagem = "Jogador 2 Venceu"
+							jogoVencido = true;
+							return;
+						}
+					}
+					//verifica se alguma coluna tem alguma jogada
+					for(i =0; i < 3 ; i++)
+					{
+						if (matJogoVelha[0][i] == 1 &&
+						    matJogoVelha[1][i] == 1 &&
+							matJogoVelha[2][i] == 1)
+						{
+							jogoMensagem = "Jogador 1 Venceu"
+							jogoVencido = true;
+							return;
+						}
+						else if(matJogoVelha[0][i] == 2 &&
+								matJogoVelha[1][i] == 2 &&
+								matJogoVelha[2][i] == 2)
+						{
+							jogoMensagem = "Jogador 2 Venceu"
+							jogoVencido = true;
+							return;
+						}
+					}
+					
+					//verifica diagonal principal
+					if (matJogoVelha[0][0] == 1 &&
+						matJogoVelha[1][1] == 1 &&
+						matJogoVelha[2][2] == 1)
+					{
+						jogoMensagem = "Jogador 1 Venceu"
+						jogoVencido = true;
+						return;
+					}
+					else if(matJogoVelha[0][0] == 2 &&
+							matJogoVelha[1][1] == 2 &&
+							matJogoVelha[2][2] == 2)
+					{
+						jogoMensagem = "Jogador 2 Venceu"
+						jogoVencido = true;
+						return;
+					}
+					//verifica a outra diagonal
+					if (matJogoVelha[0][2] == 1 &&
+						matJogoVelha[1][1] == 1 &&
+						matJogoVelha[2][0] == 1)
+					{
+						jogoMensagem = "Jogador 1 Venceu"
+						jogoVencido = true;
+						return;
+					}
+					else if(matJogoVelha[0][2] == 2 &&
+							matJogoVelha[1][1] == 2 &&
+							matJogoVelha[2][0] == 2)
+					{
+						jogoMensagem = "Jogador 2 Venceu"
+						jogoVencido = true;
+						return;
+					}
+				}
+			}
+			
+		</script>
+	</head>
+	<body onLoad="reinicio()">
+		<table width="500px"  height="500px" border="1" bordercolor="black"  >
+			<tr height="33%" >
+				<td width="33%" id="1" onClick="movimenta(0,0)">&nbsp</td>
+				<td width="33%" id="2" onClick="movimenta(0,1)">&nbsp</td>
+				<td width="33%" id="3" onClick="movimenta(0,2)">&nbsp</td>
+			</tr>
+			<tr height="33%">
+				<td width="33%" id="4" onClick="movimenta(1,0)">&nbsp</td>
+				<td width="33%" id="5" onClick="movimenta(1,1)">&nbsp</td>
+				<td width="33%" id="6" onClick="movimenta(1,2)">&nbsp</td>
+			</tr>
+			<tr height="33%">
+				<td width="33%" id="7" onClick="movimenta(2,0)">&nbsp</td>
+				<td width="33%" id="8" onClick="movimenta(2,1)">&nbsp</td>
+				<td width="33%" id="9" onClick="movimenta(2,2)">&nbsp</td>
+			</tr>
+		</table>
+		
+		<table>
+			<tr>
+				<td><input type="button" id="b1"  value="Nova Partida" onClick="reinicio()" ></td>
+			</tr>
+			<tr>
+				<td id="player"></td>
+			</tr>
+			<tr>
+				<td id="vitoria"></td>
+			</tr>
+		</table>
+		
+	</body>
+</html>

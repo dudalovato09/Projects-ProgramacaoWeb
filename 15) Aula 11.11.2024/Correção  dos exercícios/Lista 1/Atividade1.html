@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<script src="script.js"></script>
+		<script type="text/javascript">
+			function avaliaCPF()
+			{
+				var cpfValido;
+				var objMensagem = document.getElementById("mensagem");
+				var objCPF = document.getElementById("cpf");
+				
+				cpfValido = VerificaCPF(objCPF.value);
+				
+				if (cpfValido)
+				{
+					objMensagem.innerHTML = "CPF Valido!";
+				}
+				else
+				{
+					objMensagem.innerHTML = "CPF Invalido!";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input  onkeyup="avaliaCPF()" type="text" id="cpf" />
+		<p id="mensagem"></p>
+	</body>
+</html>

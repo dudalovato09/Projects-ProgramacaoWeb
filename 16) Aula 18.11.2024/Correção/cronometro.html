@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<script type="text/javascript" language="javascript">
+			var identificador;
+			var hora;
+			var minuto;
+			var segundo;
+
+			function zerosEsquerda(value, numeroZeros) {
+				var zeros = "0";
+
+				for (var i = 0; i < numeroZeros; i++) 
+				{ 
+					zeros += "0"; 
+				}
+
+				return (zeros + value).slice(numeroZeros * -1);
+			}
+
+			
+			function cronometro()
+			{
+			   var obj = document.getElementById("valor");
+			   
+			   if (segundo < 60)
+			   {
+					segundo++;
+			   }
+			   else
+			   {
+					segundo = 0;
+					if (minuto < 60)
+					{
+						minuto++;
+					}
+					else
+					{
+						hora++;
+						minuto=0;
+					}
+			   }
+			   obj.value = zerosEsquerda(hora,2) + ":" + zerosEsquerda(minuto,2) + ":" + zerosEsquerda(segundo,2);		
+			}
+			
+			function iniciarContagem()
+			{
+				hora = 0;
+				minuto = 0;
+				segundo = 0;
+				identificador = setInterval(cronometro,1000);
+			}
+			
+			function pararContagem()
+			{
+				 window.clearInterval(identificador);
+			}
+			
+			
+		</script>	
+	</head>
+	<body>
+		<form name="informacoes">
+			<input type="text" id="valor" value="0" /> 
+			<input type="button" value="Iniciar" onclick="iniciarContagem()" />
+			<input type="button" value="Parar" onclick="pararContagem()" />
+		</form>
+	</body>
+</html>
