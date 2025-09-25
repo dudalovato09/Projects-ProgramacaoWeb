@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario</title>
+    </head>
+    <body>
+        <form method="get" action="https://www.ftec.com.br/processa.php">
+            <!--Campo Texto-->
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+            <br>
+            <!--Campo Radio-->
+            <label>Sexo:</label>
+            <br>
+            <label for="sexom">Masculino</label><input id="sexom" name="sexo" type="radio" value="m">
+            <label for="sexof">Feminino</label><input id="sexof" name="sexo" type="radio" value="f">
+            <br>
+            <label>Cursando curso superior</label>
+            <input type="checkbox" id="cursosuperior" name="cursosuperior" value="s">
+            <br>
+            <label>Estado Civil</label>
+            <select name="estadocivil">
+                <option value="s">Solteiro (a)</option>
+                <option value="d">Divorciado (a)</option>
+                <option value="v">Viuvo (a)</option>
+                <option value="u">União estável</option>
+                <option value="c">Casado (a)</option>
+            </select>
+            <br>
+            <label>Observação</label>
+            <textarea name="obs">
+
+            </textarea>
+            <br>
+            <input type="hidden" value="123" name="codigo">
+            <!--Campo Senha-->
+            <label>Senha:</label>
+            <input type="password" name="senha">
+
+            <input type="submit" value="Gravar">
+            <input type="reset" value="Limpar">
+        </form>
+    </body>
+</html>

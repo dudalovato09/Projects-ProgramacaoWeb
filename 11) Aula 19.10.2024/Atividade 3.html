@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atividade 3</title>
+</head>
+<body>
+    <script>
+        /*Faça um algoritmo que leia um número inteiro e diga se este é positivo ou negativo.
+        Se o valor digitado for zero, informe na tela uma mensagem informando que o valor
+        digitado é zero, e sendo assim não pode calcular se é positivo ou negativo.*/
+
+        var numero;
+
+        numero = prompt("Informe o valor:");
+
+        numero = Number (numero);
+        
+        // Verificações para exibir o resultado correto
+        if (numero  < 0) {
+            document.write("O número " + numero + " é negativo<br>");
+        } else if (numero > 0) {
+            document.write("O número " + numero + " é positivo<br>");
+        } else {
+            document.write("O número digitado é zero<br>");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atividade 5</title>
+</head>
+<body>
+    <script>
+        /* Faça um algoritmo que calcule o salário líquido do funcionário da empresa XYZ.
+        Leia o salário base e a idade. Calcule o bônus do funcionário, sendo o mesmo calculado
+        pela seguinte regra de negócio: para funcionários com salário maior ou igual a 1000 e
+        com idade superior a 50 anos, receberá 10% de bônus; funcionários com salário menor
+        de 1000,00 e com idade até 50 anos receberá somente 5%. Imprima o salário base, o
+        bônus do funcionário e o salário líquido. */
+
+        var funcionario, idade, salarioBase, salarioLiquido, bonus;
+
+        funcionario = prompt("Informe o nome do funcionário:");
+        idade = parseInt(prompt("Informe a idade do funcionário:")); // Convertendo para inteiro
+        salarioBase = parseFloat(prompt("Informe o salário do funcionário:")); // Convertendo para float
+
+        // Verificação para calcular o bônus
+        if (salarioBase >= 1000 && idade > 50) {
+            bonus = salarioBase * 0.10; // 10% de bônus
+        } else {
+            bonus = salarioBase * 0.05; // 5% de bônus
+        }
+
+        // Cálculo do salário líquido
+        salarioLiquido = salarioBase + bonus;
+
+        // Impressão dos resultados
+        document.write("Funcionário: " + funcionario + "<br>");
+        document.write("Salário base: R$ " + salarioBase.toFixed(2) + "<br>");
+        document.write("Bônus: R$ " + bonus.toFixed(2) + "<br>");
+        document.write("Salário líquido: R$ " + salarioLiquido.toFixed(2) + "<br>");
+        
+        /* toFixed(2) é um método que arredonda um número para cima e o formata com duas casas decimais após a vírgula */
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atividade 1</title>
+</head>
+<body>
+    <script>
+        /*Ler 3 números inteiros e determinar quantos são iguais.*/
+
+        var valor1, valor2, valor3;
+        let iguais = 0;
+
+        valor1 = prompt("Informe o primeiro valor:");
+        valor2 = prompt("Informe o segundo valor:");
+        valor3 = prompt("Informe o terceiro valor:");
+
+        valor1 = Number (valor1);
+        valor2 = Number (valor2);
+        valor3 = Number (valor3);
+
+        // Verificando quantos valores são iguais
+        if (valor1 === valor2) {
+            iguais++;
+        }
+        if (valor1 === valor3) {
+            iguais++;
+        }
+        if (valor2 === valor3) {
+            iguais++;
+        }
+
+        // Verificações para exibir o resultado correto
+        if (iguais === 3) {
+            document.write("Os três valores são iguais<br>");
+        } else if (iguais === 1) {
+            document.write("Apenas dois dos valores são iguais<br>");
+        } else {
+            document.write("Todos os valores são diferentes<br>");
+        }
+    </script>
+</body>
+</html>

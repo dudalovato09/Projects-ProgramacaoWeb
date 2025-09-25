@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tarefa 4</title>
+    </head>
+    <body>
+        <script>
+            /*
+            4.  Dado  um  ano  d.C  (depois  de  Cristo),  identifique  se  este  é  um  ano  bissexto  ou  não. 
+            Considere que para o ano ser bissexto basta que seja divisível por 400. Caso contrário, 
+            este precisará ser divisível por 4 e não ser divisível por 100.
+            */
+            var ano, anobissexto;
+            ano = prompt("Informe o ano: ");
+            ano = Number(ano);
+
+            anobissexto = false;
+            if (ano % 400 == 0){
+                anobissexto = true;
+            }
+            else{
+                if ((ano % 4 == 0) && (ano % 100 != 0)){
+                    anobissexto = true;
+                }
+            }
+
+            if (anobissexto){
+                document.write("O ano " + ano + " eh bissexto!");
+            }
+            else{
+                document.write("O ano " + ano + " nao eh bissexto!");
+            }
+
+        </script>
+    </body>
+</html>

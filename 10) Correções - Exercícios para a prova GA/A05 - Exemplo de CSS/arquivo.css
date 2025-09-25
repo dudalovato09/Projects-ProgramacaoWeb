@@ -1,0 +1,45 @@
+h1 {
+    font-size: 120px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p{
+    color:rgb(100, 4, 200);
+    font-size:100px;
+}
+
+#p1 {
+    color:yellowgreen;
+    margin-left: 40px;
+}
+
+div{
+    border: 3px dashed black;
+}
+
+#div1{
+    background-color: rgb(18, 78, 131);
+}
+
+#div2{
+    background-color: rgb(18, 150, 131);
+}
+
+#div3{
+    background-color: rgb(150, 150, 131);
+}
+
+#div4{
+    background-color: rgb(10, 150, 150);
+}
+
+#letrapequena{
+    font-size: 26px;
+    color:white;
+}
+
+#negrito{
+    font-weight: 900;
+    font-style: italic;
+    text-decoration: underline;
+}

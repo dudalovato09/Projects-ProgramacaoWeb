@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tarefa 2</title>
+    </head>
+    <body>
+        <script>
+            /*
+            2.  Ler  um  número  inteiro  e  determinar  se  é  divisível  por  5.  
+            Se  for  divisível,  escrever uma  mensagem  na  tela  “o  número  xx  é  divisívelpor  5”.  
+            Se  for  negativo  imprima  “o número xx não é divisível por 5”.
+            */
+
+            var numero;
+            numero = prompt("Informe um numero");
+            numero = Number(numero);
+
+            if (numero < 0){
+                document.write("O numero nao eh divisivel por 5 - negativo");
+            }
+            else{
+                if ( (numero % 5) == 0){
+                    document.write("O numero " + numero + " eh divisivel por 5");
+                }
+                else{
+                    document.write("O numero " + numero + " nao eh divisivel por 5");
+                }
+            }
+
+        </script>
+    </body>
+</html>

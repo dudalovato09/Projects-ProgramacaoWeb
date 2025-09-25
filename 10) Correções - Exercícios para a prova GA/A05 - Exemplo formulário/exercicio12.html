@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercicio 12</title>
+    </head>
+    <body>
+        <form method="get" action="http://www.ftec.com.br/cadastro.php">
+            <table>
+                <tr>
+                    <td>
+                        <label for="nome">Nome:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="nome" name="nome">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Sexo:</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="sexo" value="m">
+                        <input type="radio" name="sexo" value="f">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="estadocivil">Estado Civil:</label>
+                    </td>
+                    <td>
+                        <select name="estadocivil" id="estadocivil">
+                            <option>Solteiro</option>
+                            <option>Casado</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="obs">Comentarios:</label>
+                    </td>
+                    <td>
+                        <textarea id="obs" name="obs">
+
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Enviar">
+                    </td>
+                    <td>
+                        <input type="reset" value="Limpar">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Contar Valores Iguais</title>
+</head>
+<body>
+
+    <script>
+        function contarIguais() {
+            const valor1 = document.getElementById('valor1').value;
+            const valor2 = document.getElementById('valor2').value;
+            const valor3 = document.getElementById('valor3').value;
+
+            let iguais = 0;
+
+            if (valor1 === valor2) iguais++;
+            if (valor1 === valor3) iguais++;
+            if (valor2 === valor3) iguais++;
+
+            let resultado;
+            if (iguais === 0) {
+                resultado = "Nenhum valor é igual.";
+            } else if (iguais === 1) {
+                resultado = "Dois valores são iguais.";
+            } else {
+                resultado = "Todos os três valores são iguais.";
+            }
+
+            document.getElementById('resultado').innerText = resultado;
+        }
+    </script>
+
+    <h1>Contar Valores Iguais</h1>
+    <label for="valor1">Valor 1:</label>
+    <input type="text" id="valor1"><br><br>
+    <label for="valor2">Valor 2:</label>
+    <input type="text" id="valor2"><br><br>
+    <label for="valor3">Valor 3:</label>
+    <input type="text" id="valor3"><br><br>
+    <button onclick="contarIguais()">Verificar</button>
+
+    <h2 id="resultado"></h2>
+</body>
+</html>
+
+
+
+

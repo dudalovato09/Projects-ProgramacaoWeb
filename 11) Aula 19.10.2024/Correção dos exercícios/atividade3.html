@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tarefa 3</title>
+    </head>
+    <body>
+        <script>
+            /*
+            3. Faça um algoritmo que leia um número inteiro  e diga se este é positivo ou negativo. 
+              Se  o  valor  digitado  for  zero,  informe  na  tela  uma  mensagem  informando  que  o  
+              valor digitado é zero,e sendo assim não pode calcular se é positivo ou negativo.
+            */
+            var numero;
+            numero = prompt("Informe um numero");
+            numero = Number(numero);
+
+            if (numero < 0){
+                document.write("O numero " + numero + " eh negativo!");
+            }
+            else{
+                if (numero > 0){
+                    document.write("O numero " + numero + " eh positivo!");
+                }
+                else{
+                    document.write("O valor informado eh zero, nao sendo possivel calcular se eh positivo ou negativo");
+                }
+            }
+        </script>
+    </body>
+</html>

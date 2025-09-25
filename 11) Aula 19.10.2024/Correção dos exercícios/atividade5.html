@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tarefa 5</title>
+    </head>
+    <body>
+        <script>
+            /*
+            5.  Faça  uma algoritmo  que  calcule  o saláriolíquidodo  funcionário  da  empresa  XYZ.
+            Leia o salário base e a idade. Calcule o bônus do funcionário, sendo o mesmo calculado pela 
+             seguinte  regra  de  negócio:  para  funcionárioscom  salário  maior  ou  igual  a  1000  e
+              com idade superior a 50 anos, receberá 10% de bônus; funcionários com salário menor de  1000,00   
+               e  com  idade  até  50  anos  receberá  somente  5%.Imprima  o  salário  base, 
+                o bônus do funcionário e o salário líquido.
+            */
+
+            var idade, salario, bonus, salarioLiquido;
+            idade = prompt("Informe a idade: ");
+            salario = prompt("Informe o salario: ");
+
+            idade = Number(idade);
+            salario = Number(salario);
+
+            if (salario >= 1000 && idade > 50){
+                bonus = (salario * 0.1);
+                salarioLiquido = salario + bonus;
+            }
+            else{
+                if (salario < 1000 && idade <= 50){
+                    bonus = (salario * 0.05);
+                    salarioLiquido = salario + bonus;
+                }
+                else{
+                    bonus = 0;
+                    salarioLiquido = salario;
+                }
+            }
+
+            document.write("Salario base: " + salario);
+            document.write("<br>Bonus: " + bonus);
+            document.write("<br>Salario Liquido: " + salarioLiquido);
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,168 @@
+/*Começo Padrão para Todos */
+
+/* Reseta as margens e preenchimentos de todos os elementos e define o box-sizing 
+como 'border-box' para melhor controle de layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais para o corpo da página: define a fonte, cor de fundo, cor do texto e espaçamento entre linhas */
+body {
+    font-family: 'Verdana', sans-serif;
+    background-color: #fafafa;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Estilos do cabeçalho: cor de fundo azul escuro, cor do texto branco e espaçamento interno de 1rem */
+header {
+    background-color: #004a7c;
+    padding: 1rem;
+    color: white;
+}
+
+/* Contêiner que agrupa o logo e a navegação: usa flexbox 
+para distribuir os itens horizontalmente e alinhar verticalmente */
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Estilos do logotipo: define o tamanho fixo */
+.logo {
+    width: 100px;
+    height: 75px;
+}
+
+/* Estilos para a lista de navegação: remove os marcadores de lista e alinha os 
+itens horizontalmente com espaçamento */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Estilos para os links da navegação: cor branca, texto sem sublinhado e negrito */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Adiciona um sublinhado ao passar o mouse sobre os links da navegação */
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos da seção de introdução: cor de fundo azul escuro, texto branco e centralizado, com espaçamento interno */
+.intro {
+    background-color: #004a7c;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 40px;
+}
+
+/* Estilos para o título principal na introdução: tamanho de fonte definido para 2rem */
+.intro h1 {
+    font-size: 2rem;
+}
+
+/* Estilos do rodapé: cor de fundo azul escuro, texto branco, espaçamento interno e alinhamento central */
+footer {
+    background-color: #004a7c;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Estilos para os links no rodapé: cor branca e sem sublinhado */
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Adiciona sublinhado ao passar o mouse sobre os links do rodapé */
+footer a:hover {
+    text-decoration: underline;
+}
+
+/*Fim Padrão para Todos */
+
+/* Estilos para o contêiner principal: organiza as seções laterais em um layout flexível com espaço entre elas */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+
+/* Estilos para as seções esquerda e direita: define fundo cinza, borda azul e espaçamento */
+.left-section, .right-section {
+    background-color: #e0e0e0;
+    border: 2px solid #004a7c;
+    padding: 1rem;
+    border-radius: 5px;
+    flex: 1;
+    margin-bottom: 50px;
+}
+
+/* Estilos para a seção esquerda: organiza o conteúdo verticalmente */
+.left-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos para o cabeçalho (h2) na seção esquerda: centraliza e define cor azul escura */
+.left-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #004a7c;
+}
+
+/* Estilos para a área de conteúdo: organiza texto e imagem em um layout flexível */
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilos para as seções de texto e imagem: define largura, fundo branco e borda */
+.text, .image {
+    width: 48%;
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid #bbb;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Estilos para as imagens: ajusta para ocupar totalmente o espaço disponível mantendo a proporção */
+.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilos para o subtítulo na seção direita: define fundo branco, borda e cor do texto */
+.right-section .subtitle {
+    background-color: #fff;
+    padding: 0.5rem;
+    border: 1px solid #bbb;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #004a7c;
+}
+
+/* Estilos para o conteúdo textual: define fundo branco, borda e centralização */
+.text-content {
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #bbb;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+

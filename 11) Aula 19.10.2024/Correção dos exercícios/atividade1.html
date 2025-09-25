@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tarefa 1</title>
+    </head>
+    <body>
+        <script>
+            /*
+            1.Ler 3 números inteiros e determinar quantos são iguais.
+            */
+
+            var numero1, numero2, numero3;
+            numero1 = prompt("Informe o numero 1:");
+            numero2 = prompt("Informe o numero 2:");
+            numero3 = prompt("Imforme o numero 3:");
+
+            //Converter a variavel do tipo string para o tipo numerico
+            numero1 = Number(numero1);
+            numero2 = Number(numero2);
+            numero3 = Number(numero3);
+
+            if (numero1 == numero2 && numero1 == numero3){
+                document.write("Os tres numeros sao iguais");
+            }
+            else {
+                if (numero1 == numero2 || numero1 == numero3 || numero2 == numero3){
+                    document.write("Apenas dois numeros sao iguais");
+                }
+                else{
+                    document.write("Nenhum numero eh igual");
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,146 @@
+/*Começo Padrão para Todos */
+
+/* Reseta as margens e preenchimentos de todos os elementos e define o box-sizing 
+como 'border-box' para melhor controle de layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais para o corpo da página: define a fonte, cor de fundo, cor do texto e espaçamento entre linhas */
+body {
+    font-family: 'Verdana', sans-serif;
+    background-color: #fafafa;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Estilos do cabeçalho: cor de fundo azul escuro, cor do texto branco e espaçamento interno de 1rem */
+header {
+    background-color: #004a7c;
+    padding: 1rem;
+    color: white;
+}
+
+/* Contêiner que agrupa o logo e a navegação: usa flexbox 
+para distribuir os itens horizontalmente e alinhar verticalmente */
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Estilos do logotipo: define o tamanho fixo */
+.logo {
+    width: 100px;
+    height: 75px;
+}
+
+/* Estilos para a lista de navegação: remove os marcadores de lista e alinha os 
+itens horizontalmente com espaçamento */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Estilos para os links da navegação: cor branca, texto sem sublinhado e negrito */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Adiciona um sublinhado ao passar o mouse sobre os links da navegação */
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos da seção de introdução: cor de fundo azul escuro, texto branco e centralizado, com espaçamento interno */
+.intro {
+    background-color: #004a7c;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Estilos para o título principal na introdução: tamanho de fonte definido para 2rem */
+.intro h1 {
+    font-size: 2rem;
+}
+
+/* Estilos do rodapé: cor de fundo azul escuro, texto branco, espaçamento interno e alinhamento central */
+footer {
+    background-color: #004a7c;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Estilos para os links no rodapé: cor branca e sem sublinhado */
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Adiciona sublinhado ao passar o mouse sobre os links do rodapé */
+footer a:hover {
+    text-decoration: underline;
+}
+
+/*Fim Padrão para Todos */
+
+/* Estilos para as seções about-onu, news e ods-banner: 
+define um espaçamento interno centralizando o conteúdo */
+.about-onu, .news, .ods-banner {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Estilos para os títulos (h2) dessas seções: cor azul escuro e espaçamento abaixo do título */
+.about-onu h2, .news h2, .ods-banner h2 {
+    color: #004a7c;
+    margin-bottom: 1rem;
+}
+
+/* Estilos específicos para a seção ods-banner: centraliza o texto */
+.ods-banner {
+    text-align: center;
+}
+
+/* Estilos para os artigos dentro da seção news: cor de fundo cinza claro, 
+espaçamento interno e espaçamento inferior entre os artigos */
+.news article {
+    background-color: #e0e0e0;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Estilos para os títulos (h3) dentro dos artigos na seção news: cor azul escuro e um espaçamento inferior */
+.news article h3 {
+    color: #004a7c;
+    margin-bottom: 0.5rem;
+}
+
+/* Estilos para os botões: define bordas arredondadas, largura e altura fixas, 
+cor de fundo azul escuro, texto branco e negrito */
+button{
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    background-color: #004a7c;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Estilos para os links dentro dos botões: remove a sublinhação e herda a cor do botão */
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+

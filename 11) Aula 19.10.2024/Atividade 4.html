@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atividade 4</title>
+</head>
+<body>
+    <script>
+        /*Dado um ano d.C (depois de Cristo), identifique se este é um ano bissexto ou não.
+        Considere que para o ano ser bissexto basta que seja divisível por 400. Caso contrário,
+        este precisará ser divisível por 4 e não ser divisível por 100.*/
+
+        var ano;
+
+        ano = prompt("Informe o ano:");
+
+        ano = Number (ano);
+
+        if ((ano % 400 === 0) || (ano % 4 === 0 && ano % 100 !== 0)) {
+            document.write("O ano " + ano + " é bissexto<br>");
+        } else {
+            document.write("O ano " + ano + " não é bissexto<br>");
+        }
+    </script>
+</body>
+</html>
