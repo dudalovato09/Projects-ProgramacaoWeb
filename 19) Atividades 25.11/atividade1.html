@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini HTML Page Builder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="builder-container">
+    <h1>Mini HTML Page Builder</h1>
+
+    <!-- Formulário para adicionar elementos -->
+    <div class="form-section">
+      <h2>Adicionar Componente</h2>
+      <input type="text" id="element-name" placeholder="Digite o nome do componente (ex: div, p, h1)" />
+      <input type="text" id="element-content" placeholder="Conteúdo do componente" />
+      <button id="add-element">Adicionar Componente</button>
+    </div>
+
+    <!-- Formulário para adicionar estilos -->
+    <div class="form-section">
+      <h2>Adicionar Estilo</h2>
+      <input type="text" id="css-selector" placeholder="Seletor CSS (ex: div, .classe, #id)" />
+      <textarea id="css-style" placeholder="Estilos (ex: color: red; font-size: 20px;)"></textarea>
+      <button id="add-style">Adicionar Estilo</button>
+    </div>
+
+    <hr>
+
+    <!-- Área de pré-visualização -->
+    <div id="preview-area">
+      <h2>Pré-visualização</h2>
+      <div id="dynamic-content"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
