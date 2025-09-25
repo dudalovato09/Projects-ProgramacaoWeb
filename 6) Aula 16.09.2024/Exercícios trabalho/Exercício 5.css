@@ -1,0 +1,36 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    width: 200px;
+    margin: 20px auto;
+}
+
+.A, .B {
+    grid-column: 1;
+    width: 100px;
+    height: 50px;
+}
+
+.D, .C {
+    grid-column: 2;
+    width: 50px;
+    height: 100px;
+}
+
+.A {
+    grid-row: 1;
+}
+
+.B {
+    grid-row: 2;
+}
+
+.D {
+    grid-row: 1;
+}
+
+.C {
+    grid-row: 2;
+}
