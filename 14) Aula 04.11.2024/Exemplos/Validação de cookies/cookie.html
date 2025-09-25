@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script>
+            function GravarCookie(obj){
+                var dataVencimento = new Date;
+
+			    dataVencimento.setMonth(dataVencimento.getMonth() + 6);
+			
+			    document.cookie = obj.value + ";expires=" + dataVencimento.toGMTString();
+            }
+
+            function LerCookie(obj){
+                obj.value = document.cookie;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Exemplo de Cookie</h1>
+        <label>Conteúdo do Cookie</label>
+        <input type="text" id="campo">
+        <input type="button" value="Gravar Cookie" onclick="GravarCookie(campo)">
+        <input type="button" value="Ler Cookie" onclick="LerCookie(campo)">
+    </body>
+</html>

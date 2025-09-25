@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Atividade 6</title>
+    </head>
+    <body>
+
+        <h2>Informe 5 números</h2>
+        <input type="number" id="num1" placeholder="Número 1">
+        <input type="number" id="num2" placeholder="Número 2">
+        <input type="number" id="num3" placeholder="Número 3">
+        <input type="number" id="num4" placeholder="Número 4">
+        <input type="number" id="num5" placeholder="Número 5">
+        <button onclick="findLargest()">Encontrar o Maior</button>
+
+        <h3 id="result"></h3>
+
+        <script>
+            /* Faça um programa que leia 5 números e informe o maior número.  */
+
+            function findLargest() {
+                let num1 = parseFloat(document.getElementById('num1').value);
+                let num2 = parseFloat(document.getElementById('num2').value);
+                let num3 = parseFloat(document.getElementById('num3').value);
+                let num4 = parseFloat(document.getElementById('num4').value);
+                let num5 = parseFloat(document.getElementById('num5').value);
+
+                let largest = Math.max(num1, num2, num3, num4, num5);
+
+                document.getElementById('result').innerHTML = "O maior número é: " + largest;
+            }
+        </script>
+
+    </body>
+</html>

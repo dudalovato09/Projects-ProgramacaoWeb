@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Gerenciamento de Cookies</title>
+        
+        <!---Escreva duas funções em JavaScript que permitem inserir um novo cookie e ler um cookie existente.
+        Estas funções devem ter a seguinte nomenclatura:
+
+        setCookie(chave, valor, validade)
+        getCookie(chave)
+        A função “setCookie” deve adicionar um cookie ao site, 
+        considerando os parâmetros passados, enquanto que a função “getCookie” 
+        retorna um cookie a partir da chave passada.
+        
+        NÂO ESTA BUSCANO OS COOKIES-->
+
+        <script>
+            // Função para definir um novo cookie
+            function setCookie(chave, valor, validade) {
+                var d = new Date();
+                d.setTime(d.getTime() + (validade * 24 * 60 * 60 * 1000)); // validade em dias
+                var expires = "expires=" + d.toUTCString();
+                document.cookie = chave + "=" + encodeURIComponent(valor) + ";" + expires + ";path=/";
+                alert("Cookie '" + chave + "' definido com sucesso!");
+            }
+
+            // Função para ler um cookie existente
+            function getCookie(chave) {
+                var nome = chave + "=";
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var c = cookies[i].trim();
+                    if (c.indexOf(nome) === 0) {
+                        return decodeURIComponent(c.substring(nome.length, c.length));
+                    }
+                }
+                return null; // Retorna null se o cookie não for encontrado
+            }
+
+            // Função para salvar o cookie usando os valores do formulário
+            function salvarCookie() {
+                var chave = document.getElementById("cookieChave").value;
+                var valor = document.getElementById("cookieValor").value;
+                var validade = parseInt(document.getElementById("cookieValidade").value);
+
+                if (chave && valor && !isNaN(validade)) {
+                    setCookie(chave, valor, validade);
+                } else {
+                    alert("Por favor, preencha todos os campos corretamente.");
+                }
+            }
+
+            // Função para exibir o valor de um cookie específico
+            function buscarCookie() {
+                var chave = document.getElementById("cookieBusca").value;
+                var resultado = getCookie(chave);
+
+                if (resultado !== null) {
+                    alert("Valor do cookie '" + chave + "': " + resultado);
+                } else {
+                    alert("Cookie '" + chave + "' não encontrado.");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Gerenciamento de Cookies</h1>
+
+        <h2>Definir um novo cookie</h2>
+        <form onsubmit="event.preventDefault(); salvarCookie();">
+            <label for="cookieChave">Nome do Cookie:</label>
+            <input type="text" id="cookieChave" required><br><br>
+
+            <label for="cookieValor">Valor do Cookie:</label>
+            <input type="text" id="cookieValor" required><br><br>
+
+            <label for="cookieValidade">Validade (em dias):</label>
+            <input type="number" id="cookieValidade" required><br><br>
+
+            <button type="submit">Salvar Cookie</button>
+        </form>
+
+        <h2>Buscar um cookie existente</h2>
+        <form onsubmit="event.preventDefault(); buscarCookie();">
+            <label for="cookieBusca">Nome do Cookie:</label>
+            <input type="text" id="cookieBusca" required><br><br>
+
+            <button type="submit">Buscar Cookie</button>
+        </form>
+    </body>
+</html>
+

@@ -1,0 +1,38 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <title>Série de Fibonacci</title>
+    </head>
+    <body>
+        <h2>Gerador da Série de Fibonacci</h2>
+        <label for="terms">Informe o número de termos:</label>
+        <input type="number" id="terms" min="1" placeholder="Número de termos">
+        <button onclick="generateFibonacci()">Gerar Série</button>
+
+        <h3 id="result"></h3>
+
+        <script>
+            /* A série de Fibonacci é formada pela sequência 1,1,2,3,5,8,13,21,34,55,... 
+            Faça um programa capaz de gerar a série até o n−ésimo termo. */
+
+            function generateFibonacci() {
+                let n = parseInt(document.getElementById('terms').value);
+                let fibonacci = [];
+                
+                // Inicializando os dois primeiros termos
+                let a = 1, b = 1;
+
+                // Gerando a série de Fibonacci
+                for (let i = 1; i <= n; i++) {
+                    fibonacci.push(a);
+                    let nextTerm = a + b;
+                    a = b;
+                    b = nextTerm;
+                }
+
+                // Exibindo o resultado
+                document.getElementById('result').innerHTML = `Série de Fibonacci até o ${n}º termo: ${fibonacci.join(', ')}`;
+            }
+        </script>
+    </body>
+</html>

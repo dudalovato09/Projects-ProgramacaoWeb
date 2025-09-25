@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cálculo de Potência</title>
+    </head>
+    <body>
+        <h2>Cálculo de Potência</h2>
+        <label for="base">Informe a base:</label>
+        <input type="number" id="base" placeholder="Base">
+        <br>
+        <label for="exponent">Informe o expoente:</label>
+        <input type="number" id="exponent" placeholder="Expoente">
+        <br>
+        <button onclick="calculatePower()">Calcular Potência</button>
+
+        <h3 id="result"></h3>
+
+        <script>
+            /*Faça um programa que peça dois números, base e expoente, calcule e mostre o 
+            primeiro número elevado ao segundo número. Não utilize a função de potência da linguagem. */
+            function calculatePower() {
+                let base = parseInt(document.getElementById('base').value);
+                let exponent = parseInt(document.getElementById('exponent').value);
+                let result = 1;
+
+                // Calcular a potência sem usar a função de potência
+                for (let i = 0; i < exponent; i++) {
+                    result *= base; // Multiplica a base pela quantidade de vezes do expoente
+                }
+
+                document.getElementById('result').innerHTML = `${base} elevado a ${exponent} é: ${result}`;
+            }
+        </script>
+    </body>
+</html>

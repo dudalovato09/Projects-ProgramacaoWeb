@@ -1,0 +1,29 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<script>
+			/*
+			2.	Ler 10 valores e contar quantos estão no intervalo [10, 20] 
+			e quantos deles estão fora deste intervalo, 
+			escrevendo estas informações.
+			*/
+			var i, valorLido, contador, limite;
+			i = 0;
+			contador = 0
+			limite = 10
+			while(i < limite){
+				valorLido = prompt("Informe um numero");
+				valorLido = Number(valorLido);
+				if (valorLido >= 10 && valorLido <= 20){
+					contador++;
+				}
+				i++;
+			}
+			document.write("Quantidade Numeros no Intervalo: " + contador);
+			document.write("<br>Quantidade Numeros fora do Intervalo: " + (10 - contador) )
+		
+			
+		</script>
+	</body>
+</html>

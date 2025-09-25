@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<script type="text/javascript" language="javascript">
+			function inicializa()
+			{
+			    //obtem a variavel
+				var objeto = document.getElementById("quadrado");
+				
+				objeto.style.position = "absolute";
+				objeto.style.width = "100px";
+				objeto.style.height = "100px";
+				objeto.style.top = "20px";
+				objeto.style.left = "20px";
+				objeto.style.backgroundColor = "red";
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="aqui" onclick="inicializa()">
+		<div style="background-color:blue;" id="quadrado"></div>
+	</body>
+</html>

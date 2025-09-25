@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Atividade 6</title>
+    </head>
+    <body>
+
+        <h2>Números de 1 a 20 - Um ao lado do outro</h2>
+        <div id="horizontal"></div>
+
+        <script>
+            /* Faça um programa que imprima na tela os números de 1 a 20, um abaixo do outro.
+            Depois modifique o programa para que ele mostre os números um ao lado do outro.  */
+
+            let horizontalOutput = '';
+            for (let i = 1; i <= 20; i++) {
+                horizontalOutput += i + ' ';
+            }
+            document.getElementById('horizontal').innerHTML = horizontalOutput;
+        </script>
+
+        <h2>Números de 1 a 20 - Um abaixo do outro</h2>
+        <div id="vertical"></div>
+
+        <script>
+            let verticalOutput = '';
+            for (let i = 1; i <= 20; i++) {
+                verticalOutput += i + '<br>';
+            }
+            document.getElementById('vertical').innerHTML = verticalOutput;
+        </script>
+    </body>
+</html>

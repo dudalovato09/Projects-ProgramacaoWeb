@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2 com Storage API</title>
+</head>
+<body>
+    <div>
+        <p><strong>Último Acesso:</strong> <span id="ultimoAcesso">--</span></p>
+        <p><strong>Contagem de Acessos:</strong> <span id="contadorAcessos">--</span></p>
+        <p><strong>Origem do Acesso:</strong> <span id="origemAcesso">--</span></p>
+    </div>
+
+    <script>
+        function registrarAcesso() {
+            const agora = new Date().toLocaleString();
+            const origem = document.referrer || "Acesso direto";
+            
+            let contador = parseInt(localStorage.getItem("contadorAcessos")) || 0;
+            contador += 1;
+
+            localStorage.setItem("ultimoAcesso", agora);
+            localStorage.setItem("contadorAcessos", contador);
+            localStorage.setItem("origemAcesso", origem);
+
+            document.getElementById("ultimoAcesso").textContent = agora;
+            document.getElementById("contadorAcessos").textContent = contador;
+            document.getElementById("origemAcesso").textContent = origem;
+        }
+
+        function mostrarAcessos() {
+            const ultimoAcesso = localStorage.getItem("ultimoAcesso") || "--";
+            const contadorAcessos = localStorage.getItem("contadorAcessos") || "--";
+            const origemAcesso = localStorage.getItem("origemAcesso") || "Acesso direto";
+
+            document.getElementById("ultimoAcesso").textContent = ultimoAcesso;
+            document.getElementById("contadorAcessos").textContent = contadorAcessos;
+            document.getElementById("origemAcesso").textContent = origemAcesso;
+        }
+
+        registrarAcesso();
+        mostrarAcessos();
+    </script>
+</body>
+</html>

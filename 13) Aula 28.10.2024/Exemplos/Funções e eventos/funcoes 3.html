@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<script>
+			function Somar(valor1, valor2){
+				var resultado;
+				resultado = valor1 + valor2;
+				return resultado;
+			}
+			
+			function Processar(){
+				var v1, v2, resultado;
+				
+				v1 = document.cadastro.val1.value;
+				v2 = document.cadastro.val2.value;
+				
+				v1 = Number(v1);
+				v2 = Number(v2);
+				
+				resultado = Somar(v1,v2);
+				
+				document.cadastro.res.value = resultado;
+			}
+			
+		</script>
+	</head>
+	<body>
+		<form name="cadastro">
+			<input type="text" name="val1" value="2">
+			<br>
+			<input type="text" name="val2">
+			<br>
+			<input type="text" name="res">
+			<br>
+			<input type="button" onclick="Processar()" value="Clique Aqui!">
+		</form>
+	</body>
+</html>

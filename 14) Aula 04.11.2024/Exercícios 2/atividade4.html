@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2 Cookies</title>
+</head>
+<body>
+    <div>
+        <p><strong>Último Acesso:</strong> <span id="ultimoAcesso">--</span></p>
+        <p><strong>Contagem de Acessos:</strong> <span id="contadorAcessos">--</span></p>
+        <p><strong>Origem do Acesso:</strong> <span id="origemAcesso">--</span></p>
+    </div>
+
+    <script>
+        function registrarAcesso() {
+            const agora = new Date().toLocaleString();
+            const origem = document.referrer || "Acesso direto";
+            
+            let contador = parseInt(getCookie("contadorAcessos")) || 0;
+            contador += 1;
+
+            setCookie("ultimoAcesso", agora, 30);
+            setCookie("contadorAcessos", contador, 30);
+            setCookie("origemAcesso", origem, 30);
+
+            document.getElementById("ultimoAcesso").textContent = agora;
+            document.getElementById("contadorAcessos").textContent = contador;
+            document.getElementById("origemAcesso").textContent = origem;
+        }
+
+        function setCookie(chave, valor, validade) {
+            const data = new Date();
+            data.setTime(data.getTime() + (validade * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + data.toUTCString();
+            document.cookie = chave + "=" + encodeURIComponent(valor) + ";" + expires + ";path=/";
+        }
+
+        function getCookie(chave) {
+            const nome = chave + "=";
+            const cookies = document.cookie.split(';');
+            
+            for (let i = 0; i < cookies.length; i++) {
+                let cookie = cookies[i].trim();
+                
+                if (cookie.indexOf(nome) === 0) {
+                    return decodeURIComponent(cookie.substring(nome.length, cookie.length));
+                }
+            }
+            return null;
+        }
+
+        registrarAcesso();
+    </script>
+</body>
+</html>

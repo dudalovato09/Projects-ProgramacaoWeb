@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--- Faça um programa que leia um nome de usuário e a 
+        sua senha e não aceite a senha igual ao nome do usuário, 
+        mostrando uma mensagem de erro e voltando a pedir as informações.  -->
+
+        <script>
+           function ValidarUsuarioSenha(){
+                var usu;
+                var pwd;
+
+                usu = document.getElementById("usuario").value;
+                pwd = document.getElementById("senha").value;
+
+                if(usu == pwd){
+                    
+                    //Imprimir uma mensagem na tela que retorna que o usuário é igual a senha
+                    document.getElementById("mensagem").innerHTML = "Usuário e senha são iguais!";
+                    return false;
+
+                }else{
+
+                    return true;
+                }
+           }
+        </script>
+    </head>
+    <body>
+
+        <form onsubmit="return ValidarUsuarioSenha()" action="#" method="post">
+            <label>Usuário</label>
+            <input placeholder="Informe o usuário" type="text" id="usuario">
+
+            <br>
+
+            <label>Senha</label>
+            <input placeholder="Informe a senha" type="password" id="senha">
+            <label id="mensagem"></label>
+
+            <br>
+
+            <input type="submit">
+        </form>
+
+      
+    </body>
+</html>

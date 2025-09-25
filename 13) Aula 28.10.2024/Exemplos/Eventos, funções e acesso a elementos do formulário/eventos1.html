@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Eventos 1</title>
+        <script>
+            function CalculaCrescimentoCidade(){
+                /*
+                4.	Suponha que a população de uma cidade A seja da ordem de 100.000 habitantes 
+                    com uma taxa anual de crescimento de 3,1% ao ano, 
+                    e que a população de uma cidade B de 210.000 habitantes com uma taxa anual 
+                    de crescimento de 1,5%. 
+                    Escreva um programa em javascript  que calcule e escreva quantos anos serão 
+                    necessários para que a população da cidade A ultrapasse a da cidade B, 
+                    mantidas as taxas anuais de crescimento.
+                */
+
+                var populacaoCidadeA, populacaoCidadeB, contadorAnos;
+
+                populacaoCidadeA = 100000;
+                populacaoCidadeB = 210000;
+                contadorAnos = 0;
+
+                while(populacaoCidadeA <= populacaoCidadeB){
+                    populacaoCidadeA = populacaoCidadeA + (populacaoCidadeA * 0.031);
+                    populacaoCidadeB = populacaoCidadeB + (populacaoCidadeB * 0.015);
+                    contadorAnos++;
+                }
+
+                document.write("Sao necessários " + contadorAnos + " anos para a populacao da cidade A ultrapassar a populacao da cidade B")
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Eventos 1</h1>
+        <button onclick="CalculaCrescimentoCidade()">Calcular Populacao</button>
+    </body>
+</html>

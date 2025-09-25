@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<script type="text/javascript" language="javascript">
+			//objeto que contem a funcao de controle de tempo
+			var armazenaContador;
+
+			function inicio()
+			{
+				//executa a funcao incrementacontador a cada 1000 milisegundos ou 1 segundo
+				armazenaContador = setInterval(desenhaDiv,500);
+			}
+
+			function desenhaDiv()
+			{
+				var linha, coluna;
+				var conteudo;
+				
+				linha = Math.random() * 1000;
+				coluna = Math.random() * 1000;
+				
+				//obtem a variavel
+				var objeto = document.getElementById("quadrado");
+				
+				conteudo = "<div style='position:absolute;width:50px;height:50px;top:" + linha + ";left:" + coluna + ";background-color:red;'></div>";
+				
+				objeto.innerHTML += conteudo;
+
+			}
+			
+			function inicializa()
+			{
+			    //obtem a variavel
+				var objeto = document.getElementById("quadrado");
+				
+				objeto.style.position = "absolute";
+				objeto.style.width = "1000px";
+				objeto.style.height = "10000px";
+				objeto.style.top = "0px";
+				objeto.style.left = "0px";
+				
+				inicio();
+			}
+		</script>
+	</head>
+	<body onload="inicializa()">
+		<div id="quadrado"></div>
+	</body>
+</html>

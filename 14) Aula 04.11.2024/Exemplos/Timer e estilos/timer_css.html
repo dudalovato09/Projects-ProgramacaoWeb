@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<script type="text/javascript" language="javascript">
+			//objeto que contem a funcao de controle de tempo
+			var armazenaContador;
+
+			function inicio()
+			{
+				//executa a funcao incrementacontador a cada 1000 milisegundos ou 1 segundo
+				armazenaContador=setInterval(incrementacontador,1000);
+			}
+
+			function fim()
+			{
+				//termina a execucao
+				clearInterval(armazenaContador);
+			}
+			
+			function incrementacontador()
+			{
+				//obtem a variavel
+				var objeto = document.getElementById("quadrado");
+				
+				objeto.style.left = Number(objeto.style.left.replace("px","")) + 10;
+			}
+			
+			function inicializa()
+			{
+			    //obtem a variavel
+				var objeto = document.getElementById("quadrado");
+				
+				objeto.style.position = "absolute";
+				objeto.style.width = "100px";
+				objeto.style.height = "100px";
+				objeto.style.top = "200px";
+				objeto.style.left = "10px";
+				objeto.style.backgroundColor = "red";
+			}
+		</script>
+	</head>
+	<body onload="inicializa()">
+		<form name="navegador">
+			<input type="button" onclick="inicio()" value="Iniciar" />
+			<input type="button" onclick="fim()" value="Terminar" />
+		</form>
+		<div id="quadrado"></div>
+	</body>
+</html>

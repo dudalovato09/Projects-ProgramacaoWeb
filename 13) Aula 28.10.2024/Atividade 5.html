@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--- Altere o programa anterior permitindo ao usuário informar as populações e as 
+        taxas de crescimento iniciais. Valide a entrada e permita repetir a operação.  -->
+
+        <script>
+            function ProcessarCalculo () {
+
+                var popA = Number(document.getElementById("popA").value);
+                var popB = Number(document.getElementById("popB").value);
+
+                var cresA = Number(document.getElementById("cresA").value) / 100;
+                var cresB  = Number(document.getElementById("cresB").value) / 100;
+
+                var contador = 0;
+
+                do {
+                    popA = popA + popA * cresA;
+                    popB = popB + popB * cresB;
+
+                    contador ++;
+
+                }while(popA < popB);
+
+                documento.getElementById("resultado").innerHTML = "Em" + contador + "a população A ultrapassa a população B"
+            }
+        </script>
+    </head>
+    <body>
+      
+    </body>
+</html>

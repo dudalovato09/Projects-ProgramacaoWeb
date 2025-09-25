@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Acessos com Cookies</title>
+
+    <!---Criar uma função em JavaScript com o emprego de cookies que 
+    possa ser usada a cada acesso a página, registrando neste momento 
+    a data e hora em que o acesso foi realizado, a quantidade de vezes 
+    que a página foi acessada (acumulativo) e o endereço de origem de 
+    onde o usuário chegou aquela pagina (o endereço anteriormente acessado pelo navegador).-->
+
+    <!--NÃO ESTA CONTABILIZANDO -->
+</head>
+<body>
+    <h1>Bem-vindo à Página</h1>
+    <p id="info"></p>
+
+    <script>
+        // Função para definir um cookie
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            document.cookie = name + "=" + value + ";expires=" + date.toUTCString() + ";path=/";
+        }
+
+        // Função para obter um cookie
+        function getCookie(name) {
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const cookies = decodedCookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                let c = cookies[i];
+                while (c.charAt(0) === ' ') c = c.substring(1);
+                if (c.indexOf(name + "=") === 0) return c.substring(name.length + 1, c.length);
+            }
+            return "";
+        }
+
+        // Função principal para registrar as informações
+        function registrarAcesso() {
+            const agora = new Date();
+            const dataHoraAcesso = agora.toLocaleString();
+
+            // Recupera o número de acessos e o endereço de origem
+            let contadorAcessos = parseInt(getCookie("contadorAcessos")) || 0;
+            let ultimaDataAcesso = getCookie("ultimaDataAcesso") || "Nunca";
+            let enderecoOrigem = getCookie("enderecoOrigem") || "Direto (sem referenciador)";
+
+            // Exibe as informações da última sessão na página
+            document.getElementById("info").innerHTML = `
+                Último acesso: ${ultimaDataAcesso}<br>
+                Total de acessos: ${contadorAcessos}<br>
+                Origem do último acesso: ${enderecoOrigem}
+            `;
+
+            // Atualiza o contador de acessos e armazena os novos dados
+            contadorAcessos++;
+            setCookie("contadorAcessos", contadorAcessos, 365);
+            setCookie("ultimaDataAcesso", dataHoraAcesso, 365);
+            setCookie("enderecoOrigem", document.referrer || "Direto (sem referenciador)", 365);
+        }
+
+        // Chama a função de registro de acesso ao carregar a página
+        registrarAcesso();
+    </script>
+</body>
+</html>

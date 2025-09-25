@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Atividade 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            /* Faça um programa que leia e valide as seguintes informações:
+            Nome: maior que 3 caracteres;
+            Idade: entre 0 e 150;
+            Salário: maior que zero;
+            Sexo: 'f' ou 'm';
+            Estado Civil: 's', 'c', 'v', 'd';
+            Dica: se sua variável é texto, o tamanho dela está armazenado em: texto.length  */
+            
+            //A propriedade length em JavaScript é usada para obter o número de unidades de código de uma string ou o número de elementos de um array
+            // toLowerCase() transforma uma string em letras minúsculas, retornando uma nova string com esse formato
+            // LET é usada para declarar variáveis que podem mudar de valor ao longo do tempo
+            // includes() serve para determinar se um array ou uma string contém um elemento ou um conjunto de caracteres
+
+            let nome, idade, salario, sexo, estadoCivil;
+
+            // Validação do nome
+            do {
+                nome = prompt("Informe seu nome (mais de 3 caracteres):");
+                if (nome.length <= 3) {
+                    alert("Nome inválido! Deve ter mais de 3 caracteres.");
+                }
+            } while (nome.length <= 3);
+
+            // Validação da idade
+            do {
+                idade = parseInt(prompt("Informe sua idade (entre 0 e 150):"));
+                if (idade < 0 || idade > 150) {
+                    alert("Idade inválida! Deve estar entre 0 e 150.");
+                }
+            } while (idade < 0 || idade > 150);
+
+            // Validação do salário
+            do {
+                salario = parseFloat(prompt("Informe seu salário (maior que zero):"));
+                if (salario <= 0) {
+                    alert("Salário inválido! Deve ser maior que zero.");
+                }
+            } while (salario <= 0);
+
+            // Validação do sexo
+            do {
+                sexo = prompt("Informe seu sexo (f para feminino, m para masculino):").toLowerCase();
+                if (sexo !== 'f' && sexo !== 'm') {
+                    alert("Sexo inválido! Deve ser apenas 'f' para feminino e 'm' para masculino.");
+                }
+            } while (sexo !== 'f' && sexo !== 'm');
+
+            // Validação do estado civil
+            do {
+                estadoCivil = prompt("Informe seu estado civil: 's' para solteiro, 'c' para casado, 'v' para viúvo, 'd' para divorciado:").toLowerCase();
+                if (!['s', 'c', 'v', 'd'].includes(estadoCivil)) {
+                    alert("Estado civil inválido! Deve ser 's', 'c', 'v' ou 'd'.");
+                }
+            } while (!['s', 'c', 'v', 'd'].includes(estadoCivil));
+
+            // Mensagem de confirmação
+            document.write("<h2>Informações Cadastradas com Sucesso!</h2>");
+            document.write("Nome: " + nome + "<br>");
+            document.write("Idade: " + idade + "<br>");
+            document.write("Salário: R$ " + salario.toFixed(2) + "<br>");
+            document.write("Sexo: " + (sexo === 'f' ? "Feminino" : "Masculino") + "<br>");
+            document.write("Estado Civil: " + (estadoCivil === 's' ? "Solteiro" : estadoCivil === 'c' ? "Casado" : estadoCivil === 'v' ? "Viúvo" : "Divorciado") + "<br>");
+
+        </script>
+    </body>
+</html>

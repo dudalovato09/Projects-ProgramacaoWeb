@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Storage API</title>
+        <script>
+            function GravarStorageAPI(){
+                var obj;
+                obj = document.getElementById("valorsalvar");
+                localStorage.setItem("conteudo", obj.value);
+            }
+
+            function LerStorageAPI(){
+                var obj;
+                obj = document.getElementById("valorler");
+                obj.value = localStorage.getItem("conteudo");
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="valorsalvar">
+        <input type="button" value="Salvar Cookie" onclick="GravarStorageAPI()">
+        <br>
+        <input type="text" id="valorler">
+        <input type="button" value="Ler Cookie" onclick="LerStorageAPI()">
+    </body>
+</html>

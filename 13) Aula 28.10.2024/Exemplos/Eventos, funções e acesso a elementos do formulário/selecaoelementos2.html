@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Atividade 3</title>
+        <script>
+            /*
+            3.	Faça um programa em javascript que utilizando repetição gere a seguinte saída:
+
+            1 1 1 1 1 1
+            2 2 2 2 2 2
+            3 3 3 3 3 3
+            4 4 4 4 4 4
+            5 5 5 5 5 5
+            6 6 6 6 6 6
+            */
+            function ExecutarTarefa(){
+                var i, j, conteudo, elemento;
+
+                conteudo = "";
+                for(i = 1;i <= 6; i++)
+                {
+                    for(j=1;j<=10;j++){
+                        conteudo = conteudo + i + " ";
+                    }
+                    conteudo = conteudo + "<br>";
+                }
+                
+                elemento = document.getElementById("areaAtividade");
+                elemento.innerHTML = conteudo;
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>Atividade 3</h1>
+        <button onclick="ExecutarTarefa()">Executar atividade</button>
+        <div id="areaAtividade">
+
+        </div>
+    </body>
+</html>

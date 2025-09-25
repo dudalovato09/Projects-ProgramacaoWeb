@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script>
+            function GravarLocalStorage(obj){
+
+                localStorage.setItem("campoid", obj.value);
+			
+            }
+
+            function LerLocalStorage(obj){
+                obj.value = localStorage.getItem("campoid");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Exemplo de Cookie</h1>
+        <label>Conteúdo do Cookie</label>
+        <input type="text" id="campo">
+        <input type="button" value="Gravar Local Storage" onclick="GravarLocalStorage(campo)">
+        <input type="button" value="Ler Local Storage" onclick="LerLocalStorage(campo)">
+    </body>
+</html>

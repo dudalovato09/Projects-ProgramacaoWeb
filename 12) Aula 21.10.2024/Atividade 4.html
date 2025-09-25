@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Atividade 4</title>
+    </head>
+    <body>
+        <h1>Crescimento Populacional</h1>
+        <script>
+            /* Supondo que a população de um país A seja da ordem de 80000 habitantes com uma taxa anual 
+            de crescimento de 3% e que a população de B seja 200000 habitantes com uma taxa de crescimento 
+            de 1.5%. Faça um programa que calcule e escreva o número de anos necessários para que a população 
+            do país A ultrapasse ou iguale a população do país B, mantidas as taxas de crescimento.  */
+            
+            // Dados iniciais
+            let populacaoA = 80000; 
+            let populacaoB = 200000; 
+            const taxaCrescimentoA = 0.03; 
+            const taxaCrescimentoB = 0.015; 
+            let anos = 0; 
+
+            // Loop para calcular os anos necessários
+            while (populacaoA < populacaoB) {
+                populacaoA += populacaoA * taxaCrescimentoA; 
+                populacaoB += populacaoB * taxaCrescimentoB; 
+                anos++; 
+            }
+
+            // Mensagem de resultado
+            document.write(`<h2>Resultado:</h2>`);
+            document.write(`A população do país A ultrapassará a população do país B em ${anos} anos.<br>`);
+            document.write(`População A: ${Math.round(populacaoA)} habitantes<br>`);
+            document.write(`População B: ${Math.round(populacaoB)} habitantes<br>`);
+        </script>
+    </body>
+</html>

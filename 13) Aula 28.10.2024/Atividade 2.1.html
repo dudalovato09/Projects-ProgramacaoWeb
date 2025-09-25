@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <!--- Faça um programa que leia um nome de usuário e a 
+        sua senha e não aceite a senha igual ao nome do usuário, 
+        mostrando uma mensagem de erro e voltando a pedir as informações.  -->
+
+        <script>
+            function ValidarUsuarioSenha(){
+            
+                var usuario, senha;
+
+                do{
+                    usuario = prompt ("Informe o usuário:");
+                    senha = prompt ("Informe a senha:");
+
+                    if (usuario == senha){
+
+                        alert("usuário e senha iguais. Não permitido!");
+                    }
+                    
+                }while(usuario == senha);
+            }
+
+        </script>
+    </head>
+    <body>
+
+        <script>
+            ValidarUsuarioSenha();
+        </script>
+      
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tarefa 4</title>
+        <script>
+            /*
+            4.	Suponha que a população de uma cidade A seja da ordem de 100.000 habitantes com uma taxa anual de 
+            crescimento de 3,1% ao ano, e que a população de uma cidade B de 210.000 habitantes com uma taxa anual de 
+            crescimento de 1,5%. Escreva um programa em javascript  que calcule e escreva quantos anos serão 
+            necessários para que a população da cidade A ultrapasse a da cidade B, 
+            mantidas as taxas anuais de crescimento.
+           
+
+            
+            */
+
+            function CalcularTaxaCrescimento(){
+                var populacaoCidadeA, populacaoCidadeB, taxaCrescimentoCidadeA, taxaCrescimentoCidadeB, anos;
+
+                populacaoCidadeA = document.getElementById("populacaoA").value;
+                populacaoCidadeB = document.getElementById("populacaoB").value;
+                taxaCrescimentoCidadeA = document.getElementById("taxaA").value;
+                taxaCrescimentoCidadeB = document.getElementById("taxaB").value;
+
+                /*Converter os valores lidos em numero*/
+                populacaoCidadeA = Number(populacaoCidadeA);
+                populacaoCidadeB = Number(populacaoCidadeB);
+                taxaCrescimentoCidadeA = Number(taxaCrescimentoCidadeA);
+                taxaCrescimentoCidadeB = Number(taxaCrescimentoCidadeB);
+
+                anos = 0;
+                while (populacaoCidadeA < populacaoCidadeB){
+                    populacaoCidadeA = populacaoCidadeA + (populacaoCidadeA * (taxaCrescimentoCidadeA / 100));
+                    populacaoCidadeB = populacaoCidadeB + (populacaoCidadeB * (taxaCrescimentoCidadeB / 100));
+                    anos++;
+                }
+
+                document.getElementById("resultado").innerHTML = "<b>" + anos + "</b>";
+            }
+
+        </script>
+    </head>
+    <body>
+            <label>Populacao da Cidade A:</label>
+            <input type="text" id="populacaoA">
+            <br>
+            <label>Populacao da Cidade B:</label>
+            <input type="text" id="populacaoB">
+            <br>
+            <label>Taxa de crescimento da Cidade A:</label>
+            <input type="text" id="taxaA">
+            <br>
+            <label>Taxa de crescimento da Cidade B:</label>
+            <input type="text" id="taxaB">
+            <br>
+            <input type="button" onclick="CalcularTaxaCrescimento()" value="Calcular Periodo">
+            <hr>
+            <div id="resultado">
+
+            </div>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Atividade 2</title>
+        <script>
+            function Calcular(){
+                /*
+                2.	Ler 10 valores e contar quantos estão no intervalo [10, 20] e quantos 
+                deles estão fora deste intervalo, 
+                escrevendo estas informações.
+                */
+                var elemento, elementoDentro, elementoFora, valorCampoInput;
+                elemento = document.getElementById("txValor");
+                elementoDentro = document.getElementById("txDentro");
+                elementoFora = document.getElementById("txFora");
+
+                valorCampoInput = elemento.value;
+                valorCampoInput = Number(valorCampoInput);
+
+                if (valorCampoInput >= 10 && valorCampoInput <= 20){
+                    elementoDentro.value = "O valor informado está dentro";
+                }
+                else{
+                    elementoFora.value = "O valor informado está fora";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Atividade 2</h1>
+        Informe o Valor: <input type="text" id="txValor"> <br>
+        Valores Fora: <input type="text" id="txFora"><br>
+        Valor Dentro: <input type="text" id="txDentro"><br>
+        <button onclick="Calcular()">Calcular</button>
+    </body>
+</html>

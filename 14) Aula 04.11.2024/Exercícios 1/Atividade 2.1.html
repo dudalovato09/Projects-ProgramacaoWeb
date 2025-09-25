@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <!---Criar um campo de senha com um identificador visual ao lado do campo 
+        informando através de diferentes corres o grau de dificuldade da senha. 
+        Deverão existir três cores, representando um grau fácil, médio ou dificil e a 
+        regra de validação para os níveis deve considerar certas características da senha como:
+
+        Deve possuir pelo menos um caracter maiusculo;
+        Deve possuir pelo menos um caracter minusculo;
+        Deve possuir pelo menos um número;
+        Deve possuir pelo menos um caracter especial;
+        Deve possuir pelo menos um espaço em branco;
+        Deve possuir 8 digitos;
+
+        O grau "dificil" deve contemplar todas as regras, enquanto que o "fácil" 
+        deve contemplas apenas duas regras e o médio 4 regras.-->
+        
+        <meta charset="UTF-8">
+        <title>Validação de Senha</title>
+        <style>
+            .dificuldade {
+                font-weight: bold;
+                margin-left: 10px;
+                padding: 5px;
+            }
+            .facil {
+                color: red;
+            }
+            .medio {
+                color: orange;
+            }
+            .dificil {
+                color: green;
+            }
+            .regras {
+                font-size: 0.9em;
+                color: #555;
+            }
+        </style>
+        <script>
+            function validarSenha() {
+                var senha = document.getElementById("senha").value;
+                var indicador = document.getElementById("indicador");
+
+                // Regras de validação
+                var temMaiuscula = /[A-Z]/.test(senha);
+                var temMinuscula = /[a-z]/.test(senha);
+                var temNumero = /[0-9]/.test(senha);
+                var temEspecial = /[\W_]/.test(senha); // Caracteres especiais
+                var temEspaco = /\s/.test(senha);
+                var temTamanhoMinimo = senha.length >= 8;
+
+                // Contador de regras cumpridas
+                var contador = 0;
+                if (temMaiuscula) contador++;
+                if (temMinuscula) contador++;
+                if (temNumero) contador++;
+                if (temEspecial) contador++;
+                if (temEspaco) contador++;
+                if (temTamanhoMinimo) contador++;
+
+                // Verifica o nível de dificuldade da senha
+                if (contador >= 6) {
+                    indicador.textContent = "Difícil";
+                    indicador.className = "dificuldade dificil";
+                } else if (contador >= 4) {
+                    indicador.textContent = "Médio";
+                    indicador.className = "dificuldade medio";
+                } else if (contador >= 2) {
+                    indicador.textContent = "Fácil";
+                    indicador.className = "dificuldade facil";
+                } else {
+                    indicador.textContent = "";
+                    indicador.className = "";
+                }
+            }
+
+            function toggleSenha() {
+                var senhaInput = document.getElementById("senha");
+                var btnToggle = document.getElementById("btnToggle");
+
+                if (senhaInput.type === "password") {
+                    senhaInput.type = "text";
+                    btnToggle.textContent = "Ocultar Senha";
+                } else {
+                    senhaInput.type = "password";
+                    btnToggle.textContent = "Mostrar Senha";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Formulário de Cadastro com Validação de Senha</h1>
+
+        <div class="regras">
+            <h3>Regras para uma senha segura:</h3>
+            <ul>
+                <li>Deve conter pelo menos uma letra maiúscula</li>
+                <li>Deve conter pelo menos uma letra minúscula</li>
+                <li>Deve conter pelo menos um número</li>
+                <li>Deve conter pelo menos um caractere especial (ex: @, #, !, etc.)</li>
+                <li>Deve conter pelo menos um espaço em branco</li>
+                <li>Deve ter no mínimo 8 caracteres</li>
+            </ul>
+        <form>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" oninput="validarSenha()">
+            <button type="button" id="btnToggle" onclick="toggleSenha()">Mostrar Senha</button>
+            <span id="indicador" class="dificuldade"></span>
+            <br><br>
+        </form>
+    </body>
+</html>
+

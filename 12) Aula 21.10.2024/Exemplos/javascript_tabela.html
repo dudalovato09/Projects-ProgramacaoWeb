@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function DesenharTabela(){
+                var linha, coluna, contador;
+
+                linha = prompt("Informe o numero de linhas:");
+                coluna = prompt("Informe o número de colunas:");
+
+                linha = Number(linha);
+                coluna = Number(coluna);
+
+                contador=0;
+                document.write("<table border='1'>");
+                for(var i = 0; i < linha; i++){
+                    document.write("<tr>");
+                    for( var j = 0; j < coluna; j++){
+                        contador++;
+                        document.write("<td>" + contador + "</td>");
+                    }
+                    document.write("</tr>");
+                }
+                document.write("</table>");
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" value="Desenhar Tabela" onclick="DesenharTabela()">
+    </body>
+</html>

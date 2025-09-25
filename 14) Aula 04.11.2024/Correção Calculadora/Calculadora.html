@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculadora</title>
+        <style>
+            .display{
+                width: 100px;
+            }
+
+            .dupla{
+                width:48px;
+            }
+
+            input{
+                width: 20px;
+                height: 20px;
+            }
+        </style>
+        <script>
+            var valorNumero1, operacao;
+
+            function RecebeNumero(numero){
+                var obj;
+                obj = document.getElementById("display");
+                obj.value = obj.value + numero;
+            }
+
+            function RecebeOperacao(op){
+                var obj;
+
+                operacao = op;
+                obj = document.getElementById("display");
+                valorNumero1 = Number(obj.value);
+                obj.value="";
+            }
+
+            function ProcessarResultado(){
+                var obj, valorNumero2;
+
+                obj = document.getElementById("display");
+                valorNumero2 = Number(obj.value);
+
+                if (operacao == "+"){
+                    obj.value = valorNumero1 + valorNumero2;
+                }
+                else if (operacao == "-"){
+                    obj.value = valorNumero1 - valorNumero2;
+                }
+                else if (operacao == "*"){
+                    obj.value = valorNumero1 * valorNumero2;
+                }
+                else{
+                    obj.value = valorNumero1 / valorNumero2;
+                }
+            }
+
+            function Limpar()
+            {
+                var obj;
+                obj = document.getElementById("display");
+                obj.value="";
+            }
+
+            function LimparGeral(){
+                Limpar();
+                valorNumero1 = 0;
+                operacao = "";
+            }
+
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td colspan="4">
+                    <input class="display" type="text" id="display">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input class="dupla" type="button" value="Clear" onclick="LimparGeral()">
+                </td>
+                <td>
+                    <input type="button" value="CE" onclick="Limpar()">
+                </td>
+                <td>
+                    <input type="button" value="+" onclick="RecebeOperacao('+')">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="1" onclick="RecebeNumero(1)">
+                </td>
+                <td>
+                    <input type="button" value="2" onclick="RecebeNumero(2)">
+                </td>
+                <td>
+                    <input type="button" value="3" onclick="RecebeNumero(3)">
+                </td>
+                <td>
+                    <input type="button" value="-" onclick="RecebeOperacao('-')">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="4" onclick="RecebeNumero(4)">
+                </td>
+                <td>
+                    <input type="button" value="5" onclick="RecebeNumero(5)">
+                </td>
+                <td>
+                    <input type="button" value="6" onclick="RecebeNumero(6)">
+                </td>
+                <td>
+                    <input type="button" value="*" onclick="RecebeOperacao('*')">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="7" onclick="RecebeNumero(7)">
+                </td>
+                <td>
+                    <input type="button" value="8" onclick="RecebeNumero(8)">
+                </td>
+                <td>
+                    <input type="button" value="9" onclick="RecebeNumero(9)">
+                </td>
+                <td>
+                    <input type="button" value="/" onclick="RecebeOperacao('/')">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="0" onclick="RecebeNumero(0)">
+                </td>
+                <td>
+                    <input type="button" value="." onclick="RecebeNumero('.')">
+                </td>
+                <td colspan="2">
+                    <input class="dupla" type="button" value="=" onclick="ProcessarResultado()">
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

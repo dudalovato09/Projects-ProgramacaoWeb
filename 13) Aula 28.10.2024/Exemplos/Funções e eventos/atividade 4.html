@@ -1,0 +1,30 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<script>
+			/*
+			4.	Suponha que a população de uma cidade A seja da ordem 
+			de 100.000 habitantes com uma taxa anual de crescimento de 3,1%
+			ao ano, e que a população de uma cidade B 
+			de 210.000 habitantes com uma taxa anual de crescimento 
+			de 1,5%. Escreva um programa em javascript  que calcule e 
+			escreva quantos anos serão necessários para que a 
+			população da cidade A ultrapasse a da cidade B, 
+			mantidas as taxas anuais de crescimento.
+			*/
+			
+			var anos, populacaoA, populacaoB;
+			anos = 0;
+			populacaoA = 100000;
+			populacaoB = 210000;
+			while(populacaoA < populacaoB){
+				populacaoA = populacaoA + (populacaoA * 0.031);
+				populacaoB = populacaoB + (populacaoB * 0.015);
+				anos++;
+			}
+			document.write("A populacao A ultrapassa a B em " + anos + " anos");
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contador de Números Pares e Ímpares</title>
+    </head>
+    <body>
+        <h2>Informe 10 números inteiros</h2>
+        <div id="inputs"></div>
+        <button onclick="countEvenOdd()">Contar Pares e Ímpares</button>
+
+        <h3 id="result"></h3>
+
+        <script>
+            /*Faça um programa que peça 10 números inteiros, calcule e mostre a quantidade 
+            de números pares e a quantidade de números ímpares.*/
+            
+            // Criar 10 campos de entrada para os números
+            for (let i = 1; i <= 10; i++) {
+                document.getElementById('inputs').innerHTML += `<input type="number" id="num${i}" placeholder="Número ${i}"><br>`;
+            }
+
+            function countEvenOdd() {
+                let evenCount = 0;
+                let oddCount = 0;
+
+                // Contar pares e ímpares
+                for (let i = 1; i <= 10; i++) {
+                    let num = parseInt(document.getElementById(`num${i}`).value);
+                    if (num % 2 === 0) {
+                        evenCount++;
+                    } else {
+                        oddCount++;
+                    }
+                }
+
+                // Exibir resultados
+                document.getElementById('result').innerHTML = `Quantidade de números pares: ${evenCount} <br>Quantidade de números ímpares: ${oddCount}`;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Atividade 2</title>
+    </head>
+    <body>
+        <script>
+            /* Faça um programa que leia um nome de usuário e a sua senha e não aceite a senha 
+            igual ao nome do usuário, mostrando uma mensagem de erro e voltando a pedir as informações.  */
+
+            // LET é usada para declarar variáveis que podem mudar de valor ao longo do tempo
+
+            let usuario;
+            let senha;
+
+            do {
+                usuario = prompt("Informe seu nome de usuário:");
+                senha = prompt("Informe sua senha:");
+
+                // Verifica se a senha é igual ao nome de usuário
+                if (senha === usuario) {
+                    alert("Erro: A senha não pode ser igual ao nome de usuário. Tente novamente.");
+                    // alert() é usado para exibir uma caixa de diálogo com uma mensagem e um botão "OK"
+                }
+            } while (senha === usuario); // Continua pedindo enquanto a senha for igual ao nome
+
+            // Mensagem de confirmação
+            document.write("Cadastro realizado com sucesso!<br>");
+            document.write("Nome de usuário: " + usuario + "<br>");
+            
+        </script>
+    </body>
+</html>

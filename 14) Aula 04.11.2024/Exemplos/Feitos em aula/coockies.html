@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cookies</title>
+        <script>
+            function GravarCookie(){
+                var obj;
+                obj = document.getElementById("valorsalvar");
+                document.cookie = obj.value;
+            }
+
+            function LerCookie(){
+                var obj;
+                obj = document.getElementById("valorler");
+                obj.value = document.cookie;
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="valorsalvar">
+        <input type="button" value="Salvar Cookie" onclick="GravarCookie()">
+        <br>
+        <input type="text" id="valorler">
+        <input type="button" value="Ler Cookie" onclick="LerCookie()">
+    </body>
+</html>

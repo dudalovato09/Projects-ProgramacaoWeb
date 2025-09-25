@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Intervalo de Números Inteiros e Soma</title>
+    </head>
+    <body>
+        <h2>Informe dois números inteiros</h2>
+        <input type="number" id="num1" placeholder="Número 1">
+        <input type="number" id="num2" placeholder="Número 2">
+        <button onclick="generateIntervalAndSum()">Gerar Intervalo e Soma</button>
+
+        <h3 id="result"></h3>
+
+        <script>
+            /*Altere o programa anterior para mostrar no final a soma dos números.*/
+            function generateIntervalAndSum() {
+                let num1 = parseInt(document.getElementById('num1').value);
+                let num2 = parseInt(document.getElementById('num2').value);
+                let result = '';
+                let sum = 0;
+
+                if (num1 < num2) {
+                    for (let i = num1 + 1; i < num2; i++) {
+                        result += i + ' ';
+                        sum += i;
+                    }
+                } else {
+                    for (let i = num2 + 1; i < num1; i++) {
+                        result += i + ' ';
+                        sum += i;
+                    }
+                }
+
+                // Mostrar os números e a soma
+                document.getElementById('result').innerHTML = result ? 
+                    `Números: ${result} <br>Soma: ${sum}` : "Não há números no intervalo.";
+            }
+        </script>
+    </body>
+</html>

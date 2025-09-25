@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Atividade 5</title>
+
+        <script>
+
+            // O CÁLCULO NÃO ESTÁ SENDO IMPRESSO NA TELA, CORRIGIR ISTO EM AULA
+            
+            /* Altere o programa anterior permitindo ao usuário informar as populações e as 
+            taxas de crescimento iniciais. Valide a entrada e permita repetir a operação.  */
+            
+            function calcularPopulacao() {
+
+                // Dados das populações e taxas
+                let populacaoA, populacaoB, taxaCrescimentoA, taxaCrescimentoB;
+    
+                // Entrada e validação das populações
+                do {
+                    populacaoA = parseInt(prompt("Informe a população do país A (número positivo):"));
+                } while (isNaN(populacaoA) || populacaoA <= 0);
+    
+                do {
+                    populacaoB = parseInt(prompt("Informe a população do país B (número positivo):"));
+                } while (isNaN(populacaoB) || populacaoB <= 0);
+    
+                // Entrada e validação das taxas de crescimento
+                do {
+                    taxaCrescimentoA = parseFloat(prompt("Informe a taxa de crescimento do país A (em percentual, por exemplo, 3 para 3%):")) / 100;
+                } while (isNaN(taxaCrescimentoA) || taxaCrescimentoA < 0);
+    
+                do {
+                    taxaCrescimentoB = parseFloat(prompt("Informe a taxa de crescimento do país B (em percentual, por exemplo, 1.5 para 1.5%):")) / 100;
+                } while (isNaN(taxaCrescimentoB) || taxaCrescimentoB < 0);
+    
+                // Cálculo do número de anos
+                let anos = 0;
+                while (populacaoA < populacaoB) {
+                    populacaoA += populacaoA * taxaCrescimentoA;
+                    populacaoB += populacaoB * taxaCrescimentoB;
+                    anos++;
+                }
+    
+                // Mensagem de resultado
+                document.write(`<h2>Resultado:</h2>`);
+                document.write(`A população do país A ultrapassará a população do país B em ${anos} anos.<br>`);
+                document.write(`População A: ${Math.round(populacaoA)} habitantes<br>`);
+                document.write(`População B: ${Math.round(populacaoB)} habitantes<br>`);
+            }
+    
+            // Loop para repetir a operação
+           /* do {
+                calcularPopulacao();
+            } while (confirm("Deseja calcular novamente?"));
+    
+            document.write("<h2>Obrigado por usar o programa!</h2>");*/
+    
+        </script>
+    </head>
+    <body>
+
+        <script>
+            calcularPopulacao();
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<script>
+			function executar(){
+				var elemento = document.getElementById("campo");
+				var divi = document.getElementById("d1");
+				
+				divi.innerHTML += "<p>" + elemento.value + "</p>"
+			
+			}
+		</script>
+	</head>
+	<body>
+		<input id="campo" type="text">
+		<input type="button" onclick="executar()">
+		<div id="d1">
+		</div>
+	</body>
+</html>

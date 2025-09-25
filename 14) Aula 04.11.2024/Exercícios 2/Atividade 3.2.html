@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contador de Acessos com Local Storage</title>
+
+        <!-- Exercício 2 com storage api-->
+    </head>
+    <body>
+        <h1>Bem-vindo à Página</h1>
+        <p id="info"></p>
+
+        <script>
+            function registrarAcesso() {
+                const agora = new Date();
+                const dataHoraAcesso = agora.toLocaleString();
+
+                // Recupera o número de acessos, última data de acesso e endereço de origem
+                let contadorAcessos = parseInt(localStorage.getItem("contadorAcessos")) || 0;
+                let ultimaDataAcesso = localStorage.getItem("ultimaDataAcesso") || "Nunca";
+                let enderecoOrigem = localStorage.getItem("enderecoOrigem") || "Direto (sem referenciador)";
+
+                // Exibe as informações da última sessão na página
+                document.getElementById("info").innerHTML = `
+                    Último acesso: ${ultimaDataAcesso}<br>
+                    Total de acessos: ${contadorAcessos}<br>
+                    Origem do último acesso: ${enderecoOrigem}
+                `;
+
+                // Atualiza o contador de acessos e armazena os novos dados
+                contadorAcessos++;
+                localStorage.setItem("contadorAcessos", contadorAcessos);
+                localStorage.setItem("ultimaDataAcesso", dataHoraAcesso);
+                localStorage.setItem("enderecoOrigem", document.referrer || "Direto (sem referenciador)");
+            }
+
+            // Chama a função de registro de acesso ao carregar a página
+            registrarAcesso();
+        </script>
+    </body>
+</html>

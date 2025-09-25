@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--- Faça um programa que peça uma nota, entre zero e dez. 
+        Mostre uma mensagem caso o valor seja inválido e continue 
+        pedindo até que o usuário informe um valor válido. -->
+        
+        <script>
+            function ValidarNota(){
+                var nota;
+
+                do{
+               
+                    nota = prompt ("Informe uma nota entre 0 e 10");
+                    nota = Number(nota)
+                    
+                    if( nota < 0 || nota > 10){
+                        alert("Informe uma nota válida");
+                
+                    }
+
+                }while(nota < 0 || nota > 10);
+            }
+        </script>
+
+    </head>
+    <body>
+
+        <script>
+            ValidarNota();
+        </script>
+      
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1 Cookies</title>
+</head>
+<body>
+    <div>
+        <label for="chaveCookie">Chave do Cookie:</label>
+        <input type="text" id="chaveCookie" placeholder="Digite a chave do cookie">
+    </div>
+    <div>
+        <label for="valorCookie">Valor do Cookie:</label>
+        <input type="text" id="valorCookie" placeholder="Digite o valor do cookie">
+    </div>
+    <div>
+        <label for="diasCookie">Validade (em dias):</label>
+        <input type="number" id="diasCookie" placeholder="Digite a validade em dias">
+    </div>
+    <button onclick="adicionarCookie()">Definir Cookie</button>
+    <button onclick="mostrarCookie()">Mostrar Cookie</button>
+
+    <p><strong>Resultado:</strong> <span id="resultadoCookie">--</span></p>
+
+    <script>
+        function setCookie(chave, valor, validade) {
+            const data = new Date();
+            data.setTime(data.getTime() + (validade * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + data.toUTCString();
+            document.cookie = chave + "=" + encodeURIComponent(valor) + ";" + expires + ";path=/";
+        }
+
+        function getCookie(chave) {
+            const nome = chave + "=";
+            const cookies = document.cookie.split(';');
+            
+            for (let i = 0; i < cookies.length; i++) {
+                let cookie = cookies[i].trim();
+                
+                if (cookie.indexOf(nome) === 0) {
+                    return decodeURIComponent(cookie.substring(nome.length, cookie.length));
+                }
+            }
+            return null;
+        }
+
+        function adicionarCookie() {
+            const chave = document.getElementById("chaveCookie").value;
+            const valor = document.getElementById("valorCookie").value;
+            const validade = parseInt(document.getElementById("diasCookie").value);
+            setCookie(chave, valor, validade);
+            document.getElementById("cookieResult").textContent = `Cookie '${chave}' definido com sucesso!`;
+        }
+
+        function mostrarCookie() {
+            const chave = document.getElementById("chaveCookie").value;
+            const valor = getCookie(chave);
+            document.getElementById("resultadoCookie").textContent = valor ? `Valor do cookie '${chave}': ${valor}` : `Cookie '${chave}' não encontrado.`;
+        }
+    </script>
+</body>
+</html>

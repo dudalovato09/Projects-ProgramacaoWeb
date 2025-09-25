@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			var posicao;
+			
+			function Executa()
+			{
+				alert("oi");
+				posicao = 0;
+				
+				var obj = document.getElementById("div1");
+				
+				alert(obj.style.left);
+			}
+			
+			function Movimenta()
+			{
+				var obj = document.getElementById("div1");
+				
+				posicao = posicao + 200;
+				
+				obj.style.left = posicao;
+				
+				posicao = posicao * -1;
+				
+				alert(posicao);
+			}
+		
+		</script>
+	</head>
+	<body onload="Executa()">
+		<div  id="div1" style="position:absolute;width:200px;height:200px;background-color:red;" onmouseover="Movimenta()">
+		
+		</div>
+		
+		<div style="position:absolute;top:201px;width:200px;height:200px;background-color:blue;" onmouseout="Executa()">
+		
+		</div>
+	</body>
+</html>

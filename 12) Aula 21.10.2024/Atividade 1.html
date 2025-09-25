@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Atividade 1</title>
+    </head>
+    <body>
+        <script>
+            /* Faça um programa que peça uma nota, entre zero e dez. 
+            Mostre uma mensagem caso o valor seja inválido e continue pedindo até que o usuário informe um valor válido. */
+
+            var nota;
+
+            do {
+                // Solicita a nota ao usuário
+                nota = parseFloat(prompt("Informe uma nota entre 0 e 10:"));
+
+                if(nota > 0 || nota < 10){
+                    alert("Erro: A nota digitada deve ser entre 0 e 10. Tente novamente.");
+                }
+
+            } while (nota < 0 || nota > 10); // Continua pedindo enquanto a nota não for válida
+
+            // Mensagem de confirmação
+            document.write("Você informou a nota: " + nota.toFixed(2) + "<br>");
+        </script>
+    </body>
+</html>

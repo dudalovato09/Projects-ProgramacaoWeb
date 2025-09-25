@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="Style calculadora.css">
+        <title>Calculadora Estilo Windows</title>
+    </head>
+    <body>
+        <div class="calculator">
+
+            <h1>Calculator</h1>
+
+            <div id="display" class="display">0</div>
+
+            <div class="buttons">
+            <button class="button clear" onclick="clearDisplay()">Clear</button>
+            <button class="button operation" onclick="clearEntry()">C/E</button>
+            <button class="button operation" onclick="appendToDisplay('+')">+</button>
+            <button class="button" onclick="appendToDisplay('1')">1</button>
+            <button class="button" onclick="appendToDisplay('2')">2</button>
+            <button class="button" onclick="appendToDisplay('3')">3</button>
+            <button class="button operation" onclick="appendToDisplay('-')">-</button>
+            <button class="button" onclick="appendToDisplay('4')">4</button>
+            <button class="button" onclick="appendToDisplay('5')">5</button>
+            <button class="button" onclick="appendToDisplay('6')">6</button>
+            <button class="button operation" onclick="appendToDisplay('*')">×</button>
+            <button class="button" onclick="appendToDisplay('7')">7</button>
+            <button class="button" onclick="appendToDisplay('8')">8</button>
+            <button class="button" onclick="appendToDisplay('9')">9</button>
+            <button class="button operation" onclick="appendToDisplay('/')">/</button>
+            <button class="button" onclick="appendToDisplay('0')">0</button>
+            <button class="button" onclick="appendToDisplay('.')">.</button>
+            <button class="button equal" onclick="calculateResult()">=</button>
+            </div>
+        </div>
+
+        <script>
+            const display = document.getElementById('display');
+
+            function clearDisplay() {
+            display.innerText = '0';
+            }
+
+            function clearEntry() {
+            display.innerText = display.innerText.slice(0, -1) || '0';
+            }
+
+            function appendToDisplay(value) {
+            if (display.innerText === '0') {
+                display.innerText = value;
+            } else {
+                display.innerText += value;
+            }
+            }
+
+            function calculateResult() {
+            try {
+                display.innerText = eval(display.innerText);
+            } catch (error) {
+                display.innerText = 'Erro';
+            }
+            }
+        </script>
+    </body>
+</html>
+
