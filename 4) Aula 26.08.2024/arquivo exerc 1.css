@@ -1,0 +1,48 @@
+#h1{
+    font-size: 60px;
+    font-style: italic;
+}
+
+#p2{
+    font-size: 30px;
+    margin-left: 500px ;
+}
+
+#intel{
+    color:green;
+}
+
+#Celeron{
+    color:red;
+}
+
+#SPARC{
+    color:blue;
+}
+
+#Windows{
+    text-decoration: underline;
+}
+
+#Linux{
+    text-decoration: line-through;
+}
+
+#MAC-OS{
+    font-style: italic;
+}
+
+#HP{
+    font-style: italic;
+    font-weight: bold;
+}
+
+#Dell{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#Sony{
+    font-weight: bold;
+    text-decoration: underline line-through;
+}

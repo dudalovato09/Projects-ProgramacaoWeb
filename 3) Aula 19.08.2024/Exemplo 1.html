@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Título do formulário</title>
+    </head>
+    <body>
+
+        <h1> Cadastro cliente</h1>
+
+        <form method = "get" action = "https://www.ftec.com.br">
+
+        <label for = "nome" > Nome:</label>
+        <input id="nome" type="text" name="nome">
+        <br>
+
+        <label for="telefone" > Telefone:</label>
+        <input type="tel" id="telefone" name="telefone">
+
+        <br>
+
+        <label for="estadocivil"> Estado Civil</label>
+        <select id="estadocivil" name="estadocivil">
+            <option value = "s"> Solteiro(a) </option>
+            <option value="c"> Casada(a) </option>
+            <option value="v"> Viuvo(a) </option>
+            <option value="d"> Divorciado(a) </option>
+        </select> 
+
+        <br>
+
+        <label id="sexo"> Sexo</label>
+        <input type="radio" name="sexo" value="m"> Masculino
+        <input type="radio" name="sexo" value="f"> Feminino
+
+        <br>
+
+        <label for="obs"> Observações </label>
+        <textarea id="obs" name="obs"> </textarea>
+
+        <br>
+
+        <input type="reset" value="Limpar cadastro">
+        <input type="submit" value="Enviar cadastro">
+
+        </form>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+h1{
+    font-size: 80px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#p1{
+    color:rgb(177, 110, 233, 0.637);
+    font-size: 50px;
+}
+
+#p2{
+    color:rgba(233, 110, 227, 0.507);
+    font-size: 50px;
+    margin-left: 500px;
+}
+
+div{
+    border: 1px solid black;
+}
+
+#div1{
+    background-color: lightpink;
+}
+
+#div2{
+    background-color: rgba(240, 128, 128, 0.726);
+}
+
+#div3{
+    background-color: rgb(191, 233, 243);
+}
+
+#div4{
+    background-color: rgba(144, 238, 144, 0.651);
+}
+
+#letraP{
+    font-size: smaller;
+    color: white;
+}
+
+#letraM{
+    font-size: medium;
+    color: white;
+}
+
+#letraG{
+    font-size: large;
+    color: white;
+}
+
+#letraGG{
+    font-size: larger;
+    color: white;
+}
